@@ -24,23 +24,23 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: "2646bb6b-32a2-432d-857b-6b494a9fae66",
-        serviceId: "custom-field-lp",
+        apiKey: "fc523e9a-2caa-4b73-9d05-b12ed82c771c",
+        serviceId: "hiro08-dev",
         apis: [
           {
             endpoint: "blog",
           },
+          {
+            endpoint: "ctegory",
+          },
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
