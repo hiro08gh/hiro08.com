@@ -1,3 +1,9 @@
+const path = require("path")
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -30,14 +36,14 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: "fc523e9a-2caa-4b73-9d05-b12ed82c771c",
-        serviceId: "hiro08-dev",
+        apiKey: process.env.API_KEY,
+        serviceId: process.env.SERVICE_ID,
         apis: [
           {
             endpoint: "blog",
           },
           {
-            endpoint: "ctegory",
+            endpoint: "category",
           },
         ],
       },

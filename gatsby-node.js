@@ -14,14 +14,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        allMicrocmsCategory(limit: 1000) {
-          edges {
-            node {
-              id
-              categoryId
-            }
-          }
-        }
       }
     `
   )
