@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import { Layout } from "../components/layout"
+import { MainLayout } from "../components/layouts/MainLayout"
 
 const IndexPage = ({ data: { allMicrocmsBlog } }) => (
-  <Layout>
+  <MainLayout>
     {allMicrocmsBlog.edges.map(({ node }) => (
       <React.Fragment key={node.id}>
         <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
       </React.Fragment>
     ))}
-  </Layout>
+  </MainLayout>
 )
 
 export default IndexPage
