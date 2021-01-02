@@ -1,0 +1,10 @@
+overwrite: true
+schema: "http://localhost:8000/___graphql"
+documents:
+  - "node_modules/gatsby-source-microcms/!(node_modules)/**/*.js"
+  - "./src/**/*.{ts,tsx}"
+generates:
+  src/graphqlTypes.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
