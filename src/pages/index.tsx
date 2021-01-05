@@ -15,6 +15,7 @@ const IndexPage: React.FC<Props> = ({ data }) => (
     {data.allMicrocmsBlog.edges.map(({ node }) => (
       <React.Fragment key={node.id}>
         <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
+        <Link to={`/blog/category/${node.category.id}`}>{node.category.name}</Link>
       </React.Fragment>
     ))}
   </MainLayout>
@@ -30,6 +31,10 @@ export const query = graphql`
           id
           blogId
           title
+          category {
+            id
+            name
+          }
         }
       }
     }

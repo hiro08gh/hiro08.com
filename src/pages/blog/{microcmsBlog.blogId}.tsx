@@ -9,12 +9,12 @@ type Props = {
   };
 };
 
-const BlogTemplate: React.FC<Props> = ({ data: { microcmsBlog } }) => {
+const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
   const blog = microcmsBlog;
   return <MainLayout>{blog.title}</MainLayout>;
 };
 
-export default BlogTemplate;
+export default BlogPage;
 
 export const query = graphql`
   query($id: String!) {
