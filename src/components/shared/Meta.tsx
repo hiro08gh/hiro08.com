@@ -9,7 +9,7 @@ type Props = {
   metaImage?: string
 }
 
-export const Head: React.FC<Props> = props => {
+export const Meta: React.FC<Props> = props => {
   const { metaTitle, metaDescription, metaUrl, metaImage } = props
   const { title, description, image, siteUrl } = useSiteMetadata()
 

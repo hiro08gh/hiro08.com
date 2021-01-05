@@ -15,7 +15,7 @@ export const MainLayout: React.FC<Props> = props => {
   const { children, metaTitle, metaDescription, metaImage } = props
   return (
     <>
-      <Head metaTitle={metaTitle} metaDescription={metaDescription} metaImage={metaImage} />
+      <Meta metaTitle={metaTitle} metaDescription={metaDescription} metaImage={metaImage} />
       <Header siteTitle="hiro08.dev" />
       <main>{children}</main>
     </>
