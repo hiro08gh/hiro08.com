@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta } from '../shared/Meta';
 import '../../styles/reset.scss';
 
-import Header from '../header';
+import { Header } from '../shared/Header';
 
 type Props = {
   children: React.childeNode;
