@@ -76,7 +76,6 @@ module.exports = {
                 }
               }
             `,
-            // blogフォルダにfeed.xmlを作成
             output: '/feed.xml',
             title: 'hiro08.dev'
           }
