@@ -1,20 +1,20 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import { MainLayout } from "../../components/layouts/MainLayout"
-import { MicrocmsBlog } from "../../graphqlTypes"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { MainLayout } from '../../components/layouts/MainLayout';
+import { MicrocmsBlog } from '../../graphqlTypes';
 
 type Props = {
   data: {
-    microcmsBlog: MicrocmsBlog
-  }
-}
+    microcmsBlog: MicrocmsBlog;
+  };
+};
 
 const BlogTemplate: React.FC<Props> = ({ data: { microcmsBlog } }) => {
-  const blog = microcmsBlog
-  return <MainLayout>{blog.title}</MainLayout>
-}
+  const blog = microcmsBlog;
+  return <MainLayout>{blog.title}</MainLayout>;
+};
 
-export default BlogTemplate
+export default BlogTemplate;
 
 export const query = graphql`
   query($id: String!) {
@@ -23,4 +23,4 @@ export const query = graphql`
       title
     }
   }
-`
+`;

@@ -1,22 +1,22 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useSiteMetadata } from "../../hooks/useSiteMetadata"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
 type Props = {
-  metaTitle?: string
-  metaDescription?: string
-  metaUrl?: string
-  metaImage?: string
-}
+  metaTitle?: string;
+  metaDescription?: string;
+  metaUrl?: string;
+  metaImage?: string;
+};
 
-export const Meta: React.FC<Props> = props => {
-  const { metaTitle, metaDescription, metaUrl, metaImage } = props
-  const { title, description, image, siteUrl } = useSiteMetadata()
+export const Meta: React.FC<Props> = (props) => {
+  const { metaTitle, metaDescription, metaUrl, metaImage } = props;
+  const { title, description, image, siteUrl } = useSiteMetadata();
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: "ja",
+        lang: 'ja'
       }}
     >
       <title>{metaTitle ? `${metaTitle} | hiro08.dev` : `hiro08.dev`}</title>
@@ -32,5 +32,5 @@ export const Meta: React.FC<Props> = props => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={metaImage ? metaImage : image} />
     </Helmet>
-  )
-}
+  );
+};

@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 
-import { MainLayout } from "../components/layouts/MainLayout"
-import { MicrocmsBlogConnection } from "../graphqlTypes"
+import { MainLayout } from '../components/layouts/MainLayout';
+import { MicrocmsBlogConnection } from '../graphqlTypes';
 
 type Props = {
   data: {
-    allMicrocmsBlog: MicrocmsBlogConnection
-  }
-}
+    allMicrocmsBlog: MicrocmsBlogConnection;
+  };
+};
 
 const IndexPage: React.FC<Props> = ({ data }) => (
   <MainLayout>
@@ -18,9 +18,9 @@ const IndexPage: React.FC<Props> = ({ data }) => (
       </React.Fragment>
     ))}
   </MainLayout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query {
@@ -34,4 +34,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
