@@ -32,6 +32,7 @@ export type BooleanQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Boolean']>>>;
 };
 
+
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
   ne?: Maybe<Scalars['Date']>;
@@ -86,12 +87,14 @@ export type Directory = Node & {
   internal: Internal;
 };
 
+
 export type DirectoryModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -100,12 +103,14 @@ export type DirectoryAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -114,6 +119,7 @@ export type DirectoryBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -121,12 +127,14 @@ export type DirectoryAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -145,9 +153,11 @@ export type DirectoryConnection = {
   group: Array<DirectoryGroupConnection>;
 };
 
+
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldsEnum;
 };
+
 
 export type DirectoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -391,12 +401,14 @@ export type File = Node & {
   internal: Internal;
 };
 
+
 export type FileModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -405,12 +417,14 @@ export type FileAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -419,6 +433,7 @@ export type FileBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -426,12 +441,14 @@ export type FileAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -450,9 +467,11 @@ export type FileConnection = {
   group: Array<FileGroupConnection>;
 };
 
+
 export type FileConnectionDistinctArgs = {
   field: FileFieldsEnum;
 };
+
 
 export type FileConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -810,6 +829,7 @@ export type ImageSharp = Node & {
   internal: Internal;
 };
 
+
 export type ImageSharpFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -832,6 +852,7 @@ export type ImageSharpFixedArgs = {
   trim?: Maybe<Scalars['Float']>;
 };
 
+
 export type ImageSharpResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -853,6 +874,7 @@ export type ImageSharpResolutionsArgs = {
   rotate?: Maybe<Scalars['Int']>;
   trim?: Maybe<Scalars['Float']>;
 };
+
 
 export type ImageSharpFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -878,6 +900,7 @@ export type ImageSharpFluidArgs = {
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+
 export type ImageSharpSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -902,6 +925,7 @@ export type ImageSharpSizesArgs = {
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+
 export type ImageSharpGatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
   maxWidth?: Maybe<Scalars['Int']>;
@@ -921,6 +945,7 @@ export type ImageSharpGatsbyImageDataArgs = {
   transformOptions?: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
 };
+
 
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -954,9 +979,11 @@ export type ImageSharpConnection = {
   group: Array<ImageSharpGroupConnection>;
 };
 
+
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldsEnum;
 };
+
 
 export type ImageSharpConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1330,6 +1357,7 @@ export type JpgOptions = {
   progressive?: Maybe<Scalars['Boolean']>;
 };
 
+
 export type JsonQueryOperatorInput = {
   eq?: Maybe<Scalars['JSON']>;
   ne?: Maybe<Scalars['JSON']>;
@@ -1358,12 +1386,14 @@ export type MicrocmsBlog = Node & {
   gatsbyPath?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1372,6 +1402,7 @@ export type MicrocmsBlogUpdatedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogPublishedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -1379,12 +1410,14 @@ export type MicrocmsBlogPublishedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogRevisedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogGatsbyPathArgs = {
   filePath?: Maybe<Scalars['String']>;
@@ -1402,12 +1435,14 @@ export type MicrocmsBlogAuthor = {
   image?: Maybe<MicrocmsBlogAuthorImage>;
 };
 
+
 export type MicrocmsBlogAuthorCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogAuthorUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1416,12 +1451,14 @@ export type MicrocmsBlogAuthorUpdatedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogAuthorPublishedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogAuthorRevisedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1460,12 +1497,14 @@ export type MicrocmsBlogCategory = {
   name?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogCategoryCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogCategoryUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1474,12 +1513,14 @@ export type MicrocmsBlogCategoryUpdatedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsBlogCategoryPublishedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsBlogCategoryRevisedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1507,9 +1548,11 @@ export type MicrocmsBlogConnection = {
   group: Array<MicrocmsBlogGroupConnection>;
 };
 
+
 export type MicrocmsBlogConnectionDistinctArgs = {
   field: MicrocmsBlogFieldsEnum;
 };
+
 
 export type MicrocmsBlogConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1681,7 +1724,9 @@ export type MicrocmsCategory = Node & {
   revisedAt?: Maybe<Scalars['Date']>;
   name?: Maybe<Scalars['String']>;
   categoryId?: Maybe<Scalars['String']>;
+  gatsbyPath?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsCategoryCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1690,12 +1735,14 @@ export type MicrocmsCategoryCreatedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsCategoryUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type MicrocmsCategoryPublishedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1704,11 +1751,17 @@ export type MicrocmsCategoryPublishedAtArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type MicrocmsCategoryRevisedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsCategoryGatsbyPathArgs = {
+  filePath?: Maybe<Scalars['String']>;
 };
 
 export type MicrocmsCategoryConnection = {
@@ -1721,9 +1774,11 @@ export type MicrocmsCategoryConnection = {
   group: Array<MicrocmsCategoryGroupConnection>;
 };
 
+
 export type MicrocmsCategoryConnectionDistinctArgs = {
   field: MicrocmsCategoryFieldsEnum;
 };
+
 
 export type MicrocmsCategoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1830,7 +1885,8 @@ export enum MicrocmsCategoryFieldsEnum {
   PublishedAt = 'publishedAt',
   RevisedAt = 'revisedAt',
   Name = 'name',
-  CategoryId = 'categoryId'
+  CategoryId = 'categoryId',
+  GatsbyPath = 'gatsbyPath'
 }
 
 export type MicrocmsCategoryFilterInput = {
@@ -1844,6 +1900,7 @@ export type MicrocmsCategoryFilterInput = {
   revisedAt?: Maybe<DateQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   categoryId?: Maybe<StringQueryOperatorInput>;
+  gatsbyPath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MicrocmsCategoryGroupConnection = {
@@ -1939,6 +1996,7 @@ export type Query = {
   allSitePlugin: SitePluginConnection;
 };
 
+
 export type QueryFileArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
   absolutePath?: Maybe<StringQueryOperatorInput>;
@@ -1981,12 +2039,14 @@ export type QueryFileArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllFileArgs = {
   filter?: Maybe<FileFilterInput>;
   sort?: Maybe<FileSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryDirectoryArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -2028,12 +2088,14 @@ export type QueryDirectoryArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllDirectoryArgs = {
   filter?: Maybe<DirectoryFilterInput>;
   sort?: Maybe<DirectorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
@@ -2048,12 +2110,14 @@ export type QuerySiteArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSiteArgs = {
   filter?: Maybe<SiteFilterInput>;
   sort?: Maybe<SiteSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -2072,12 +2136,14 @@ export type QuerySitePageArgs = {
   componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryImageSharpArgs = {
   fixed?: Maybe<ImageSharpFixedFilterInput>;
@@ -2093,12 +2159,14 @@ export type QueryImageSharpArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllImageSharpArgs = {
   filter?: Maybe<ImageSharpFilterInput>;
   sort?: Maybe<ImageSharpSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryMicrocmsCategoryArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2111,7 +2179,9 @@ export type QueryMicrocmsCategoryArgs = {
   revisedAt?: Maybe<DateQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   categoryId?: Maybe<StringQueryOperatorInput>;
+  gatsbyPath?: Maybe<StringQueryOperatorInput>;
 };
+
 
 export type QueryAllMicrocmsCategoryArgs = {
   filter?: Maybe<MicrocmsCategoryFilterInput>;
@@ -2119,6 +2189,7 @@ export type QueryAllMicrocmsCategoryArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryMicrocmsBlogArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2138,12 +2209,14 @@ export type QueryMicrocmsBlogArgs = {
   gatsbyPath?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllMicrocmsBlogArgs = {
   filter?: Maybe<MicrocmsBlogFilterInput>;
   sort?: Maybe<MicrocmsBlogSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteBuildMetadataArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2153,12 +2226,14 @@ export type QuerySiteBuildMetadataArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
 };
 
+
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: Maybe<SiteBuildMetadataFilterInput>;
   sort?: Maybe<SiteBuildMetadataSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePluginArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2175,6 +2250,7 @@ export type QuerySitePluginArgs = {
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
+
 
 export type QueryAllSitePluginArgs = {
   filter?: Maybe<SitePluginFilterInput>;
@@ -2197,6 +2273,7 @@ export type Site = Node & {
   internal: Internal;
 };
 
+
 export type SiteBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -2212,6 +2289,7 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
   buildTime?: Maybe<Scalars['Date']>;
 };
+
 
 export type SiteBuildMetadataBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2230,9 +2308,11 @@ export type SiteBuildMetadataConnection = {
   group: Array<SiteBuildMetadataGroupConnection>;
 };
 
+
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
+
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2370,9 +2450,11 @@ export type SiteConnection = {
   group: Array<SiteGroupConnection>;
 };
 
+
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldsEnum;
 };
+
 
 export type SiteConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2391,6 +2473,7 @@ export enum SiteFieldsEnum {
   BuildTime = 'buildTime',
   SiteMetadataTitle = 'siteMetadata___title',
   SiteMetadataDescription = 'siteMetadata___description',
+  SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
   SiteMetadataAuthor = 'siteMetadata___author',
   Port = 'port',
   Host = 'host',
@@ -2535,9 +2618,11 @@ export type SitePageConnection = {
   group: Array<SitePageGroupConnection>;
 };
 
+
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldsEnum;
 };
+
 
 export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2550,21 +2635,25 @@ export type SitePageContext = {
   id?: Maybe<Scalars['String']>;
   blogId?: Maybe<Scalars['String']>;
   _xparams?: Maybe<SitePageContext_Xparams>;
+  categoryId?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContext_Xparams = {
   __typename?: 'SitePageContext_xparams';
   blogId?: Maybe<Scalars['String']>;
+  categoryId?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContext_XparamsFilterInput = {
   blogId?: Maybe<StringQueryOperatorInput>;
+  categoryId?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
   _xparams?: Maybe<SitePageContext_XparamsFilterInput>;
+  categoryId?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2670,6 +2759,8 @@ export enum SitePageFieldsEnum {
   ContextId = 'context___id',
   ContextBlogId = 'context___blogId',
   ContextXparamsBlogId = 'context____xparams___blogId',
+  ContextXparamsCategoryId = 'context____xparams___categoryId',
+  ContextCategoryId = 'context___categoryId',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -2720,6 +2811,11 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsSourceComments = 'pluginCreator___pluginOptions___sourceComments',
   PluginCreatorPluginOptionsSourceMapContents = 'pluginCreator___pluginOptions___sourceMapContents',
   PluginCreatorPluginOptionsSourceMapEmbed = 'pluginCreator___pluginOptions___sourceMapEmbed',
+  PluginCreatorPluginOptionsDisplayName = 'pluginCreator___pluginOptions___displayName',
+  PluginCreatorPluginOptionsFileName = 'pluginCreator___pluginOptions___fileName',
+  PluginCreatorPluginOptionsMinify = 'pluginCreator___pluginOptions___minify',
+  PluginCreatorPluginOptionsTranspileTemplateLiterals = 'pluginCreator___pluginOptions___transpileTemplateLiterals',
+  PluginCreatorPluginOptionsPure = 'pluginCreator___pluginOptions___pure',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsBase64Width = 'pluginCreator___pluginOptions___base64Width',
@@ -2730,6 +2826,13 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsAnonymize = 'pluginCreator___pluginOptions___anonymize',
   PluginCreatorPluginOptionsRespectDnt = 'pluginCreator___pluginOptions___respectDNT',
   PluginCreatorPluginOptionsPageTransitionDelay = 'pluginCreator___pluginOptions___pageTransitionDelay',
+  PluginCreatorPluginOptionsQuery = 'pluginCreator___pluginOptions___query',
+  PluginCreatorPluginOptionsFeeds = 'pluginCreator___pluginOptions___feeds',
+  PluginCreatorPluginOptionsFeedsQuery = 'pluginCreator___pluginOptions___feeds___query',
+  PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
+  PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
+  PluginCreatorPluginOptionsOutput = 'pluginCreator___pluginOptions___output',
+  PluginCreatorPluginOptionsCreateLinkInHead = 'pluginCreator___pluginOptions___createLinkInHead',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
   PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
@@ -2833,9 +2936,11 @@ export type SitePluginConnection = {
   group: Array<SitePluginGroupConnection>;
 };
 
+
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldsEnum;
 };
+
 
 export type SitePluginConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2949,6 +3054,11 @@ export enum SitePluginFieldsEnum {
   PluginOptionsSourceComments = 'pluginOptions___sourceComments',
   PluginOptionsSourceMapContents = 'pluginOptions___sourceMapContents',
   PluginOptionsSourceMapEmbed = 'pluginOptions___sourceMapEmbed',
+  PluginOptionsDisplayName = 'pluginOptions___displayName',
+  PluginOptionsFileName = 'pluginOptions___fileName',
+  PluginOptionsMinify = 'pluginOptions___minify',
+  PluginOptionsTranspileTemplateLiterals = 'pluginOptions___transpileTemplateLiterals',
+  PluginOptionsPure = 'pluginOptions___pure',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsBase64Width = 'pluginOptions___base64Width',
@@ -2959,6 +3069,13 @@ export enum SitePluginFieldsEnum {
   PluginOptionsAnonymize = 'pluginOptions___anonymize',
   PluginOptionsRespectDnt = 'pluginOptions___respectDNT',
   PluginOptionsPageTransitionDelay = 'pluginOptions___pageTransitionDelay',
+  PluginOptionsQuery = 'pluginOptions___query',
+  PluginOptionsFeeds = 'pluginOptions___feeds',
+  PluginOptionsFeedsQuery = 'pluginOptions___feeds___query',
+  PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
+  PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsCreateLinkInHead = 'pluginOptions___createLinkInHead',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
   PluginOptionsBackgroundColor = 'pluginOptions___background_color',
@@ -3110,6 +3227,11 @@ export type SitePluginPluginOptions = {
   sourceComments?: Maybe<Scalars['Boolean']>;
   sourceMapContents?: Maybe<Scalars['Boolean']>;
   sourceMapEmbed?: Maybe<Scalars['Boolean']>;
+  displayName?: Maybe<Scalars['Boolean']>;
+  fileName?: Maybe<Scalars['Boolean']>;
+  minify?: Maybe<Scalars['Boolean']>;
+  transpileTemplateLiterals?: Maybe<Scalars['Boolean']>;
+  pure?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   base64Width?: Maybe<Scalars['Int']>;
@@ -3120,6 +3242,10 @@ export type SitePluginPluginOptions = {
   anonymize?: Maybe<Scalars['Boolean']>;
   respectDNT?: Maybe<Scalars['Boolean']>;
   pageTransitionDelay?: Maybe<Scalars['Int']>;
+  query?: Maybe<Scalars['String']>;
+  feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
+  output?: Maybe<Scalars['String']>;
+  createLinkInHead?: Maybe<Scalars['Boolean']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -3154,6 +3280,23 @@ export type SitePluginPluginOptionsApisFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsApisFilterInput>;
 };
 
+export type SitePluginPluginOptionsFeeds = {
+  __typename?: 'SitePluginPluginOptionsFeeds';
+  query?: Maybe<Scalars['String']>;
+  output?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsFeedsFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
+  output?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsFeedsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsFeedsFilterInput>;
+};
+
 export type SitePluginPluginOptionsFilterInput = {
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
@@ -3164,6 +3307,11 @@ export type SitePluginPluginOptionsFilterInput = {
   sourceComments?: Maybe<BooleanQueryOperatorInput>;
   sourceMapContents?: Maybe<BooleanQueryOperatorInput>;
   sourceMapEmbed?: Maybe<BooleanQueryOperatorInput>;
+  displayName?: Maybe<BooleanQueryOperatorInput>;
+  fileName?: Maybe<BooleanQueryOperatorInput>;
+  minify?: Maybe<BooleanQueryOperatorInput>;
+  transpileTemplateLiterals?: Maybe<BooleanQueryOperatorInput>;
+  pure?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   base64Width?: Maybe<IntQueryOperatorInput>;
@@ -3174,6 +3322,10 @@ export type SitePluginPluginOptionsFilterInput = {
   anonymize?: Maybe<BooleanQueryOperatorInput>;
   respectDNT?: Maybe<BooleanQueryOperatorInput>;
   pageTransitionDelay?: Maybe<IntQueryOperatorInput>;
+  query?: Maybe<StringQueryOperatorInput>;
+  feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
+  output?: Maybe<StringQueryOperatorInput>;
+  createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -3204,12 +3356,14 @@ export type SiteSiteMetadata = {
   __typename?: 'SiteSiteMetadata';
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3245,20 +3399,82 @@ export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_1_Query = (
+  { __typename?: 'Query' }
+  & { site?: Maybe<(
+    { __typename?: 'Site' }
+    & { siteMetadata?: Maybe<(
+      { __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'title' | 'description' | 'siteUrl' | 'author'>
+    )> }
+  )> }
+);
+
+export type Unnamed_2_QueryVariables = Exact<{
+  categoryId: Scalars['String'];
+}>;
+
+
+export type Unnamed_2_Query = (
+  { __typename?: 'Query' }
+  & { allMicrocmsBlog: (
+    { __typename?: 'MicrocmsBlogConnection' }
+    & Pick<MicrocmsBlogConnection, 'totalCount'>
+    & { edges: Array<(
+      { __typename?: 'MicrocmsBlogEdge' }
+      & { node: (
+        { __typename?: 'MicrocmsBlog' }
+        & Pick<MicrocmsBlog, 'id' | 'createdAt' | 'publishedAt' | 'title' | 'blogId'>
+        & { category?: Maybe<(
+          { __typename?: 'MicrocmsBlogCategory' }
+          & Pick<MicrocmsBlogCategory, 'id' | 'name'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_3_QueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
-export type Unnamed_1_Query = { __typename?: 'Query' } & {
-  microcmsBlog?: Maybe<{ __typename?: 'MicrocmsBlog' } & Pick<MicrocmsBlog, 'blogId' | 'title'>>;
-};
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>;
+export type Unnamed_3_Query = (
+  { __typename?: 'Query' }
+  & { microcmsBlog?: Maybe<(
+    { __typename?: 'MicrocmsBlog' }
+    & Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & { author?: Maybe<(
+      { __typename?: 'MicrocmsBlogAuthor' }
+      & Pick<MicrocmsBlogAuthor, 'id' | 'description' | 'name'>
+      & { image?: Maybe<(
+        { __typename?: 'MicrocmsBlogAuthorImage' }
+        & Pick<MicrocmsBlogAuthorImage, 'url'>
+      )> }
+    )> }
+  )> }
+);
 
-export type Unnamed_2_Query = { __typename?: 'Query' } & {
-  allMicrocmsBlog: { __typename?: 'MicrocmsBlogConnection' } & {
-    edges: Array<
-      { __typename?: 'MicrocmsBlogEdge' } & { node: { __typename?: 'MicrocmsBlog' } & Pick<MicrocmsBlog, 'id' | 'blogId' | 'title'> }
-    >;
-  };
-};
+export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_4_Query = (
+  { __typename?: 'Query' }
+  & { allMicrocmsBlog: (
+    { __typename?: 'MicrocmsBlogConnection' }
+    & { edges: Array<(
+      { __typename?: 'MicrocmsBlogEdge' }
+      & { node: (
+        { __typename?: 'MicrocmsBlog' }
+        & Pick<MicrocmsBlog, 'id' | 'blogId' | 'title'>
+        & { category?: Maybe<(
+          { __typename?: 'MicrocmsBlogCategory' }
+          & Pick<MicrocmsBlogCategory, 'id' | 'name'>
+        )> }
+      ) }
+    )> }
+  ) }
+);

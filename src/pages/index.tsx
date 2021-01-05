@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import { MainLayout } from '../components/layouts/MainLayout';
-import { MicrocmsBlogConnection } from '../graphqlTypes';
+import { MicrocmsBlogConnection } from '../types/graphqlTypes';
 
 type Props = {
   data: {
