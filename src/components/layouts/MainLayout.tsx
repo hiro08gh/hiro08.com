@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta } from '../shared/Meta';
+import 'prismjs/themes/prism-tomorrow.css';
 import '../../styles/reset.scss';
 
 import { Header } from '../shared/Header';

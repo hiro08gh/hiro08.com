@@ -1,4 +1,5 @@
 import marked from 'marked';
+import Prism from 'prismjs';
 
 const renderer = new marked.Renderer();
 
@@ -8,7 +9,10 @@ marked.setOptions({
   gfm: true,
   breaks: true,
   headerIds: true,
-  renderer
+  renderer,
+  highlight: (code, language) => {
+    return Prism.highlight(code, Prism.languages[language]);
+  }
 });
 
 export const renderMarkdown = (markdown) => {
