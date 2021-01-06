@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
+import Prism from 'prismjs';
 import { MainLayout } from '../../components/layouts/MainLayout';
 import { MicrocmsBlog } from '../../graphqlTypes';
 import { Author } from '../../components/blog/Author';
@@ -13,6 +14,9 @@ type Props = {
 
 const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
   const blog = microcmsBlog;
+  useEffect(() => {
+    Prism.highlightAll();
+  });
   return (
     <MainLayout>
       {blog.title}
