@@ -16,6 +16,7 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-no-sourcemaps',
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -81,9 +82,6 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap'
     },
     {
       resolve: 'gatsby-source-microcms',
