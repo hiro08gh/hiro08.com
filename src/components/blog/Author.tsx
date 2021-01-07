@@ -2,41 +2,43 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
+  className: string;
   name: string;
   image: string;
   description: string;
 };
 
-export const Author: React.FC<Props> = ({ name, image, description }) => {
+const Component: React.FC<Props> = (props) => {
+  const { className, name, image, description } = props;
   return (
-    <Container>
-      <Flex>
-        <ImgBlock>
-          <Img src={`${image}?w=124&h=124`} alt="ライターイメージ" />
-        </ImgBlock>
-        <div>
-          <h3>{name}</h3>
-          <p>{description}</p>
+    <div className={className}>
+      <div className="flex">
+        <div className="author__block">
+          <img src={`${image}?w=124&h=124`} alt="ライターイメージ" className="author__img" />
         </div>
-      </Flex>
-    </Container>
+        <div>
+          <h3 className="author__name">{name}</h3>
+          <p className="author__description">{description}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
-const Container = styled.div`
+export const Author = styled(Component)`
   margin-top: 64px;
-`;
 
-const Flex = styled.div`
-  display: flex;
-`;
+  .flex {
+    display: flex;
+  }
 
-const Img = styled.img`
-  width: 144px;
-  height: 144px;
-  border-radius: 100%;
-`;
+  .author__img {
+    width: 144px;
+    height: 144px;
+    border-radius: 100%;
+  }
 
-const ImgBlock = styled.div`
-  margin-right: 24px;
+  .author__block {
+    margin-right: 24px;
+  }
 `;
