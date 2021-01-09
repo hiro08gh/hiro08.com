@@ -1,31 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { Logo } from './Logo';
 
-export const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+type Props = {
+  className: string;
+};
+
+const Component = (props) => (
+  <header className={props.className}>
+    <div className="header__inner">
+      <Logo />
     </div>
   </header>
 );
+
+export const Header = styled(Component)`
+  width: 100%;
+
+  .header__inner {
+    padding: 0 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+`;

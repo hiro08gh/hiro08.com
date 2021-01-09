@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meta } from '../shared/Meta';
 import 'prismjs/themes/prism-tomorrow.css';
-import '../../styles/reset.scss';
+import { Meta } from '../shared/Meta';
+import { GlobalStyles } from '../shared/GlobalStyles';
 
 import { Header } from '../shared/Header';
 
@@ -17,6 +17,7 @@ export const MainLayout: React.FC<Props> = (props) => {
   return (
     <>
       <Meta metaTitle={metaTitle} metaDescription={metaDescription} metaImage={metaImage} />
+      <GlobalStyles />
       <Header siteTitle="hiro08.dev" />
       <main>{children}</main>
     </>
