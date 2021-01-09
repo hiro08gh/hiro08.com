@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { Logo } from './Logo';
 
 type Props = {
   className: string;
@@ -9,9 +10,7 @@ type Props = {
 const Component = (props) => (
   <header className={props.className}>
     <div className="header__inner">
-      <h1>
-        <Link to="/">hiro08.dev</Link>
-      </h1>
+      <Logo />
     </div>
   </header>
 );

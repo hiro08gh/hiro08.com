@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
   }
   a {
+    color: #333;
     text-decoration: none;
     cursor: pointer;
   }
