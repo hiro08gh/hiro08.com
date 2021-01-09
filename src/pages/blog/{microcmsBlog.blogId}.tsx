@@ -19,7 +19,7 @@ const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
     Prism.highlightAll();
   });
   return (
-    <MainLayout>
+    <MainLayout metaTitle={blog.title} metaDescription={blog.description}>
       <Inner>
         {blog.title}
         <Content body={blog.body} />
@@ -37,6 +37,7 @@ export const query = graphql`
       blogId
       title
       body
+      description
       author {
         image {
           url
