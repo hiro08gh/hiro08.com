@@ -11,6 +11,7 @@ const Component: React.FC<Props> = (props) => (
   <header className={props.className}>
     <div className="header__inner">
       <Logo />
+      <Link to="/search">検索</Link>
     </div>
   </header>
 );

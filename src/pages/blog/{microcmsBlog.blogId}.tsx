@@ -7,6 +7,7 @@ import { Content } from '../../components/blog/Content';
 import { Inner } from '../../components/shared/Inner';
 import { MicrocmsBlog } from '../../graphqlTypes';
 import { ShareButtons } from '../../components/blog/ShareButtons';
+import { formatDate } from '../../libs/format-date';
 
 type Props = {
   data: {
@@ -23,6 +24,7 @@ const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
     <MainLayout metaTitle={blog.title} metaDescription={blog.description}>
       <Inner>
         <h1>{blog.title}</h1>
+        <time>{formatDate(`${blog.publishedAt}`)}</time>
         <Content body={blog.body} />
         <ShareButtons path={blog.blogId} title={blog.title} />
         <Author name={blog.author.name} description={blog.author.description} image={blog.author.image.url} />
@@ -40,6 +42,7 @@ export const query = graphql`
       title
       body
       description
+      publishedAt
       author {
         image {
           url

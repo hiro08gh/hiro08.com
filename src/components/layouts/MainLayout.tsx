@@ -4,6 +4,7 @@ import { Meta } from '../shared/Meta';
 import { GlobalStyles } from '../shared/GlobalStyles';
 
 import { Header } from '../shared/Header';
+import { Footer } from '../shared/Footer';
 
 type Props = {
   children: React.childeNode;
@@ -20,6 +21,7 @@ export const MainLayout: React.FC<Props> = (props) => {
       <GlobalStyles />
       <Header siteTitle="hiro08.dev" />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };
