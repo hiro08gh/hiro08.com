@@ -19,6 +19,7 @@ export const Header = styled(Component)`
   width: 100%;
   position: fixed;
   z-index: 1000;
+  background-color: #fff;
 
   .header__inner {
     display: flex;
