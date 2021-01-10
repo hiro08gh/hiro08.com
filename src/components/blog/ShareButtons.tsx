@@ -21,23 +21,25 @@ const Component: React.FC = (props) => (
         <HatenaIcon size={42} round={true} />
       </HatenaShareButton>
     </div>
-    <span className="share__text">👈この記事をシェアする</span>
+    <span className="share__text">👈 この記事をシェアする</span>
   </div>
 );
 
 export const ShareButtons = styled(Component)`
   display: flex;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e1e1;
   .share-buttons {
     margin-top: 16px;
     margin-right: 16px;
   }
-
   .share__text {
     font-size: 20px;
+    margin-top: 8px;
   }
   .btn {
-    margin-right: 8px;
+    margin-right: 12px;
   }
 `;

@@ -4,6 +4,7 @@ import Prism from 'prismjs';
 import { MainLayout } from '../../components/layouts/MainLayout';
 import { Author } from '../../components/blog/Author';
 import { Content } from '../../components/blog/Content';
+import { RelatedBlog } from '../../components/blog/RelatedBlog';
 import { Inner } from '../../components/shared/Inner';
 import { MicrocmsBlog } from '../../graphqlTypes';
 import { ShareButtons } from '../../components/blog/ShareButtons';
@@ -28,6 +29,7 @@ const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
         <Content body={blog.body} />
         <ShareButtons path={blog.blogId} title={blog.title} />
         <Author name={blog.author.name} description={blog.author.description} image={blog.author.image.url} />
+        <RelatedBlog relatedBlog={blog.relatedBlog} />
       </Inner>
     </MainLayout>
   );
@@ -50,6 +52,15 @@ export const query = graphql`
         id
         description
         name
+      }
+      relatedBlog {
+        id
+        title
+        description
+        publishedAt
+        thumbnail {
+          url
+        }
       }
     }
   }

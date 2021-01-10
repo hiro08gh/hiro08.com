@@ -41,4 +41,9 @@ export const Author = styled(Component)`
   .author__block {
     margin-right: 24px;
   }
+
+  .author__name {
+    font-size 24px;
+    margin-bottom: 0;
+  }
 `;
