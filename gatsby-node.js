@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  const pageTemplate = path.resolve('./src/pages/blog/page/index.tsx');
+  const pageTemplate = path.resolve('./src/template/blog-page.tsx');
   const blogs = result.data.allMicrocmsBlog.edges;
   const PerPage = 10;
   const pageCount = Math.ceil(blogs.length / PerPage);

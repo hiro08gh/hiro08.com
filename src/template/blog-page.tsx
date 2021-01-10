@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { MainLayout } from '../../../components/layouts/MainLayout';
-import { Pagination } from '../../../components/shared/Pagination';
-import { Inner } from '../../../components/shared/Inner';
+import { MainLayout } from '../components/layouts/MainLayout';
+import { Pagination } from '../components/shared/Pagination';
+import { Inner } from '../components/shared/Inner';
 
 const BlogPage: React.FC = ({ data: { allMicrocmsBlog }, pageContext }) => {
   const { currentPage, pageCount } = pageContext;
