@@ -4,7 +4,8 @@ import { MainLayout } from '../../../components/layouts/MainLayout';
 
 const CategoryPage: React.FC = ({ data }) => {
   return (
-    <MainLayout>
+    <MainLayout metaTitle={data.microcmsCategory.name}>
+      <h2>{data.microcmsCategory.name}</h2>
       {data.allMicrocmsBlog.edges.map(({ node }) => (
         <React.Fragment key={node.id}>
           <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
@@ -18,7 +19,7 @@ const CategoryPage: React.FC = ({ data }) => {
 export default CategoryPage;
 
 export const query = graphql`
-  query($categoryId: String!) {
+  query($id: String!, $categoryId: String!) {
     allMicrocmsBlog(sort: { fields: [publishedAt], order: DESC }, filter: { category: { id: { eq: $categoryId } } }) {
       edges {
         node {
@@ -34,6 +35,9 @@ export const query = graphql`
         }
       }
       totalCount
+    }
+    microcmsCategory(id: { eq: $id }) {
+      name
     }
   }
 `;
