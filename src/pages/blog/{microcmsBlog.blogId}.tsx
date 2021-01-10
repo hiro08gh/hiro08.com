@@ -22,7 +22,7 @@ const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
   return (
     <MainLayout metaTitle={blog.title} metaDescription={blog.description}>
       <Inner>
-        {blog.title}
+        <h1>{blog.title}</h1>
         <Content body={blog.body} />
         <ShareButtons path={blog.blogId} title={blog.title} />
         <Author name={blog.author.name} description={blog.author.description} image={blog.author.image.url} />

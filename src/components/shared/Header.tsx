@@ -18,6 +18,7 @@ const Component: React.FC<Props> = (props) => (
 export const Header = styled(Component)`
   width: 100%;
   position: fixed;
+  top: 0;
   z-index: 1000;
   background-color: #fff;
 
