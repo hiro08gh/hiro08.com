@@ -1,16 +1,20 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { MainLayout } from '../../../components/layouts/MainLayout';
+import { Inner } from '../../../components/shared/Inner';
 
 const CategoryPage: React.FC = ({ data }) => {
   return (
-    <MainLayout>
-      {data.allMicrocmsBlog.edges.map(({ node }) => (
-        <React.Fragment key={node.id}>
-          <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
-          <Link to={`/blog/category/${node.category.id}`}>{node.category.name}</Link>
-        </React.Fragment>
-      ))}
+    <MainLayout metaTitle={data.microcmsCategory.name}>
+      <Inner>
+        <h2>{data.microcmsCategory.name}</h2>
+        {data.allMicrocmsBlog.edges.map(({ node }) => (
+          <React.Fragment key={node.id}>
+            <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
+            <Link to={`/blog/category/${node.category.id}`}>{node.category.name}</Link>
+          </React.Fragment>
+        ))}
+      </Inner>
     </MainLayout>
   );
 };
@@ -18,7 +22,7 @@ const CategoryPage: React.FC = ({ data }) => {
 export default CategoryPage;
 
 export const query = graphql`
-  query($categoryId: String!) {
+  query($id: String!, $categoryId: String!) {
     allMicrocmsBlog(sort: { fields: [publishedAt], order: DESC }, filter: { category: { id: { eq: $categoryId } } }) {
       edges {
         node {
@@ -34,6 +38,9 @@ export const query = graphql`
         }
       }
       totalCount
+    }
+    microcmsCategory(id: { eq: $id }) {
+      name
     }
   }
 `;

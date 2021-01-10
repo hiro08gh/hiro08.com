@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 import Prism from 'prismjs';
 import { MainLayout } from '../../components/layouts/MainLayout';
-import { MicrocmsBlog } from '../../graphqlTypes';
 import { Author } from '../../components/blog/Author';
 import { Content } from '../../components/blog/Content';
+import { RelatedBlog } from '../../components/blog/RelatedBlog';
 import { Inner } from '../../components/shared/Inner';
+import { MicrocmsBlog } from '../../graphqlTypes';
+import { ShareButtons } from '../../components/blog/ShareButtons';
+import { formatDate } from '../../libs/format-date';
 
 type Props = {
   data: {
@@ -19,11 +22,14 @@ const BlogPage: React.FC<Props> = ({ data: { microcmsBlog } }) => {
     Prism.highlightAll();
   });
   return (
-    <MainLayout>
+    <MainLayout metaTitle={blog.title} metaDescription={blog.description}>
       <Inner>
-        {blog.title}
+        <h1>{blog.title}</h1>
+        <time>{formatDate(`${blog.publishedAt}`)}</time>
         <Content body={blog.body} />
+        <ShareButtons path={blog.blogId} title={blog.title} />
         <Author name={blog.author.name} description={blog.author.description} image={blog.author.image.url} />
+        <RelatedBlog relatedBlog={blog.relatedBlog} />
       </Inner>
     </MainLayout>
   );
@@ -37,6 +43,8 @@ export const query = graphql`
       blogId
       title
       body
+      description
+      publishedAt
       author {
         image {
           url
@@ -44,6 +52,15 @@ export const query = graphql`
         id
         description
         name
+      }
+      relatedBlog {
+        id
+        title
+        description
+        publishedAt
+        thumbnail {
+          url
+        }
       }
     }
   }
