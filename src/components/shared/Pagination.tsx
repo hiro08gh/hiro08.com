@@ -18,15 +18,12 @@ export const Pagination: React.FC<Props> = ({ currentPage, pageCount, path }) =>
         {Array.from({ length: pageCount }, (_, i) => (
           <React.Fragment key={i}>
             <li>
-              <Link key={`pagination-number${i + 1}`} to={`/${path}/page/${i === 0 ? '' : i + 1}`} activeClassName="active">
+              <Link key={`pagination-number${i + 1}`} to={`/${path}/page/${i === 0 ? 1 : i + 1}`} activeClassName="active">
                 {i + 1}
               </Link>
             </li>
           </React.Fragment>
         ))}
-        <li>
-          <Link to={`/blog/page/${nextPage}`}>次へ</Link>
-        </li>
       </ul>
     </nav>
   );

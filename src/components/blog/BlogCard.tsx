@@ -10,6 +10,7 @@ type Props = {
 export const BlogCard: React.FC<Props> = ({ blog }) => {
   return (
     <Container>
+      {' '}
       {blog.map((blog: any) => (
         <React.Fragment key={blog.id}>
           <Article>
@@ -80,7 +81,7 @@ const Img = styled.img`
 `;
 
 const Figure = styled.figure`
-  width: 455px;
+  width: 220px;
   flex: none;
 `;
 
