@@ -10,7 +10,6 @@ type Props = {
 export const BlogCard: React.FC<Props> = ({ blog }) => {
   return (
     <Container>
-      {' '}
       {blog.map((blog: any) => (
         <React.Fragment key={blog.id}>
           <Article>
@@ -49,6 +48,7 @@ const Flex = styled.div`
 const Time = styled.time`
   letter-spacing: 1px;
   font-size: 14px;
+  margin-bottom: 8px;
 `;
 
 const Category = styled.span`
@@ -60,7 +60,9 @@ const Category = styled.span`
 `;
 
 const H3 = styled.h3`
-  font-size: 24px;
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 const Article = styled.article`
@@ -69,6 +71,7 @@ const Article = styled.article`
 
 const Row = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const A = styled.a`
@@ -88,7 +91,7 @@ const Figure = styled.figure`
 const Right = styled.div`
   flex: 1 1 0;
   margin: 0 0 0 40px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 `;
 
