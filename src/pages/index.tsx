@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import { MainLayout } from '../components/layouts/MainLayout';
 import { Inner } from '../components/shared/Inner';
 import { Pagination } from '../components/shared/Pagination';
+import { BlogList } from '../components/shared/BlogList';
 import { MicrocmsBlogConnection } from '../types/graphqlTypes';
 
 type Props = {
@@ -19,12 +20,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <MainLayout>
       <Inner>
-        {data.allMicrocmsBlog.edges.map(({ node }) => (
-          <React.Fragment key={node.id}>
-            <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
-            <Link to={`/blog/category/${node.category.id}`}>{node.category.name}</Link>
-          </React.Fragment>
-        ))}
+        <BlogList blog={data.allMicrocmsBlog} />
         <Pagination currentPage={1} pageCount={pageCount} path="blog" />
       </Inner>
     </MainLayout>
@@ -41,6 +37,7 @@ export const query = graphql`
           id
           blogId
           title
+          description
           category {
             id
             name
