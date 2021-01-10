@@ -84,6 +84,18 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'hiro08.dev',
+        short_name: 'hiro08.dev',
+        start_url: '/',
+        background_color: '#ffea18',
+        theme_color: '#5155c0',
+        display: 'standalone',
+        icon: 'static/profile.png'
+      }
+    },
+    {
       resolve: 'gatsby-source-microcms',
       options: {
         apiKey: process.env.API_KEY,

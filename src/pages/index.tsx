@@ -13,13 +13,12 @@ type Props = {
 };
 
 const IndexPage: React.FC<Props> = ({ data }) => {
-  const perPage = 1;
+  const perPage = 10;
   const pageCount = Math.ceil(data.allMicrocmsBlog.totalCount / perPage);
 
   return (
     <MainLayout>
       <Inner>
-        {}
         {data.allMicrocmsBlog.edges.map(({ node }) => (
           <React.Fragment key={node.id}>
             <Link to={`/blog/${node.blogId}`}>{node.title}</Link>

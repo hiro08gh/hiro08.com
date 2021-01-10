@@ -7,7 +7,7 @@ const CategoryPage: React.FC = ({ data }) => {
   return (
     <MainLayout metaTitle={data.microcmsCategory.name}>
       <Inner>
-        <h2>{data.microcmsCategory.name}</h2>
+        <h2>カテゴリー:{data.microcmsCategory.name}</h2>
         {data.allMicrocmsBlog.edges.map(({ node }) => (
           <React.Fragment key={node.id}>
             <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
