@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 
-import { MainLayout } from '../components/layouts/MainLayout';
-import { Inner } from '../components/shared/Inner';
-import { Pagination } from '../components/shared/Pagination';
-import { BlogList } from '../components/shared/BlogList';
-import { MicrocmsBlogConnection } from '../types/graphqlTypes';
+import { MainLayout } from 'components/layouts/MainLayout';
+import { Inner } from 'components/shared/Inner';
+import { Pagination } from 'components/shared/Pagination';
+import { BlogList } from 'components/shared/BlogList';
+import { MicrocmsBlogConnection } from 'types/graphqlTypes';
+import { PerPage } from 'libs/constants';
 
 type Props = {
   data: {
@@ -14,8 +15,7 @@ type Props = {
 };
 
 const IndexPage: React.FC<Props> = ({ data }) => {
-  const perPage = 10;
-  const pageCount = Math.ceil(data.allMicrocmsBlog.totalCount / perPage);
+  const pageCount = Math.ceil(data.allMicrocmsBlog.totalCount / PerPage);
 
   return (
     <MainLayout>
