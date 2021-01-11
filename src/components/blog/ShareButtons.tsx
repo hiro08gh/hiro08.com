@@ -30,7 +30,6 @@ export const ShareButtons = styled(Component)`
   align-items: center;
   margin-top: 48px;
   padding-top: 16px;
-  border-top: 1px solid #e1e1e1;
   .share-buttons {
     margin-top: 16px;
     margin-right: 16px;

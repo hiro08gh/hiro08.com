@@ -26,8 +26,9 @@ const Component: React.FC<Props> = (props) => {
 };
 
 export const Author = styled(Component)`
-  margin-top: 64px;
-
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #e1e1e1;
   .flex {
     display: flex;
   }
