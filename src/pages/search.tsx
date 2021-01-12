@@ -1,11 +1,16 @@
 import React from 'react';
+import { MainLayout } from 'components/layouts/MainLayout';
+import { Inner } from 'components/shared/Inner';
+import { Search } from 'components/shared/search/Search';
 
-import { MainLayout } from '../components/layouts/MainLayout';
-import { Inner } from '../components/shared/Inner';
+const searchIndices = [{ name: process.env.ALGOLIA_INDEX_NAME }];
 
 const SearchPage = () => (
-  <MainLayout>
-    <Inner>検索</Inner>
+  <MainLayout metaTitle="検索">
+    <Inner>
+      <h2>検索</h2>
+      <Search indices={searchIndices} />
+    </Inner>
   </MainLayout>
 );
 

@@ -10,9 +10,9 @@ const queries = [
       allMicrocmsBlog {
         edges {
           node {
-            objectID: id
+            objectID: blogId 
             title
-            body
+            description
           }
         }
       }
@@ -22,13 +22,13 @@ const queries = [
         return {
           objectID: node.objectID,
           title: node.title,
-          body: node.body
+          description: node.description
         };
       }),
     settings: {
       queryLanguages: ['ja']
     },
-    matchFields: ['title', 'body']
+    matchFields: ['title', 'description']
   }
 ];
 
@@ -61,7 +61,7 @@ module.exports = {
       options: {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        indexName: 'test',
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         queries
       }
     },
