@@ -4,6 +4,34 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const queries = [
+  {
+    query: `{
+      allMicrocmsBlog {
+        edges {
+          node {
+            objectID: id
+            title
+            body
+          }
+        }
+      }
+    }`,
+    transformer: ({ data }) =>
+      data.allMicrocmsBlog.edges.map(({ node }) => {
+        return {
+          objectID: node.objectID,
+          title: node.title,
+          body: node.body
+        };
+      }),
+    settings: {
+      queryLanguages: ['ja']
+    },
+    matchFields: ['title', 'body']
+  }
+];
+
 module.exports = {
   siteMetadata: {
     title: `hiro08.dev`,
@@ -29,6 +57,15 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: 'test',
+        queries
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -43,7 +80,6 @@ module.exports = {
         trackingId: process.env.TRACKING_ID
       }
     },
-    // RSSフィードの作成
     {
       resolve: `gatsby-plugin-feed`,
       options: {
