@@ -3,8 +3,8 @@ import 'prismjs/themes/prism-tomorrow.css';
 import { Meta } from '../shared/Meta';
 import { GlobalStyles } from '../shared/GlobalStyles';
 
-import { Header } from '../shared/Header';
-import { Footer } from '../shared/Footer';
+import { Header } from '../shared/header/Header';
+import { Footer } from '../shared/footer/Footer';
 
 type Props = {
   children: React.childeNode;
