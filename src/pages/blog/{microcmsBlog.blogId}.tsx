@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 import Prism from 'prismjs';
-import { MainLayout } from '../../components/layouts/MainLayout';
-import { Inner } from '../../components/shared/Inner';
-import { MicrocmsBlog } from '../../graphqlTypes';
+import { MainLayout } from 'components/layouts/MainLayout';
+import { Inner } from 'components/shared/Inner';
+import { MicrocmsBlog } from 'types/graphqlTypes';
 import { Blog } from 'components/blog/Blog';
 
 type Props = {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { MainLayout } from '../../../components/layouts/MainLayout';
-import { Inner } from '../../../components/shared/Inner';
-import { BlogList } from '../../../components/shared/BlogList';
+import { MainLayout } from 'components/layouts/MainLayout';
+import { Inner } from 'components/shared/Inner';
+import { BlogList } from 'components/shared/BlogList';
 
 const CategoryPage: React.FC = ({ data }) => {
   return (
