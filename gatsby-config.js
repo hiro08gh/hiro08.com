@@ -53,7 +53,7 @@ module.exports = {
         components: path.join(__dirname, 'src/components'),
         libs: path.join(__dirname, 'src/libs'),
         types: path.join(__dirname, 'src/types'),
-        hooks: path.join(__dirname, 'src/hooks')
+        hooks: path.join(__dirname, 'src/libs/hooks')
       }
     },
     {
