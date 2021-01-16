@@ -8,7 +8,7 @@ type Props = {
   title?: string;
 };
 
-const Component: React.FC = (props) => (
+const Component: React.FC<Props> = (props) => (
   <div className={props.className}>
     <div className="share-buttons">
       <TwitterShareButton url={`https://hiro08.dev/blog/${props.path}`} title={`${props.title}`} className="btn">

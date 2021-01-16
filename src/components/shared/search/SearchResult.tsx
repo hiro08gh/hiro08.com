@@ -5,7 +5,7 @@ import { PageHit } from './PageHit';
 
 type Props = {
   className: string;
-  indices: [];
+  indices: {name: string}[];
 };
 
 const Component: React.FC<Props> = ({ indices, className }) => (
