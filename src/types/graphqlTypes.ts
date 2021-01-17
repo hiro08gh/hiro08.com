@@ -1382,6 +1382,8 @@ export type MicrocmsBlog = Node & {
   body?: Maybe<Scalars['String']>;
   author?: Maybe<MicrocmsBlogAuthor>;
   category?: Maybe<MicrocmsBlogCategory>;
+  thumbnail?: Maybe<MicrocmsBlogThumbnail>;
+  relatedBlog?: Maybe<Array<Maybe<MicrocmsBlogRelatedBlog>>>;
   blogId?: Maybe<Scalars['String']>;
   gatsbyPath?: Maybe<Scalars['String']>;
 };
@@ -1675,6 +1677,21 @@ export enum MicrocmsBlogFieldsEnum {
   CategoryPublishedAt = 'category___publishedAt',
   CategoryRevisedAt = 'category___revisedAt',
   CategoryName = 'category___name',
+  ThumbnailUrl = 'thumbnail___url',
+  RelatedBlog = 'relatedBlog',
+  RelatedBlogId = 'relatedBlog___id',
+  RelatedBlogCreatedAt = 'relatedBlog___createdAt',
+  RelatedBlogUpdatedAt = 'relatedBlog___updatedAt',
+  RelatedBlogPublishedAt = 'relatedBlog___publishedAt',
+  RelatedBlogRevisedAt = 'relatedBlog___revisedAt',
+  RelatedBlogTitle = 'relatedBlog___title',
+  RelatedBlogDescription = 'relatedBlog___description',
+  RelatedBlogBody = 'relatedBlog___body',
+  RelatedBlogAuthorId = 'relatedBlog___author___id',
+  RelatedBlogCategoryId = 'relatedBlog___category___id',
+  RelatedBlogThumbnailUrl = 'relatedBlog___thumbnail___url',
+  RelatedBlogRelatedBlog = 'relatedBlog___relatedBlog',
+  RelatedBlogRelatedBlogId = 'relatedBlog___relatedBlog___id',
   BlogId = 'blogId',
   GatsbyPath = 'gatsbyPath'
 }
@@ -1693,6 +1710,8 @@ export type MicrocmsBlogFilterInput = {
   body?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<MicrocmsBlogAuthorFilterInput>;
   category?: Maybe<MicrocmsBlogCategoryFilterInput>;
+  thumbnail?: Maybe<MicrocmsBlogThumbnailFilterInput>;
+  relatedBlog?: Maybe<MicrocmsBlogRelatedBlogFilterListInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
   gatsbyPath?: Maybe<StringQueryOperatorInput>;
 };
@@ -1707,9 +1726,125 @@ export type MicrocmsBlogGroupConnection = {
   fieldValue?: Maybe<Scalars['String']>;
 };
 
+export type MicrocmsBlogRelatedBlog = {
+  __typename?: 'MicrocmsBlogRelatedBlog';
+  id?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  publishedAt?: Maybe<Scalars['Date']>;
+  revisedAt?: Maybe<Scalars['Date']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['String']>;
+  author?: Maybe<MicrocmsBlogRelatedBlogAuthor>;
+  category?: Maybe<MicrocmsBlogRelatedBlogCategory>;
+  thumbnail?: Maybe<MicrocmsBlogRelatedBlogThumbnail>;
+  relatedBlog?: Maybe<Array<Maybe<MicrocmsBlogRelatedBlogRelatedBlog>>>;
+};
+
+
+export type MicrocmsBlogRelatedBlogCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogRelatedBlogUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogRelatedBlogPublishedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogRelatedBlogRevisedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogRelatedBlogAuthor = {
+  __typename?: 'MicrocmsBlogRelatedBlogAuthor';
+  id?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogRelatedBlogAuthorFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MicrocmsBlogRelatedBlogCategory = {
+  __typename?: 'MicrocmsBlogRelatedBlogCategory';
+  id?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogRelatedBlogCategoryFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MicrocmsBlogRelatedBlogFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  revisedAt?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  body?: Maybe<StringQueryOperatorInput>;
+  author?: Maybe<MicrocmsBlogRelatedBlogAuthorFilterInput>;
+  category?: Maybe<MicrocmsBlogRelatedBlogCategoryFilterInput>;
+  thumbnail?: Maybe<MicrocmsBlogRelatedBlogThumbnailFilterInput>;
+  relatedBlog?: Maybe<MicrocmsBlogRelatedBlogRelatedBlogFilterListInput>;
+};
+
+export type MicrocmsBlogRelatedBlogFilterListInput = {
+  elemMatch?: Maybe<MicrocmsBlogRelatedBlogFilterInput>;
+};
+
+export type MicrocmsBlogRelatedBlogRelatedBlog = {
+  __typename?: 'MicrocmsBlogRelatedBlogRelatedBlog';
+  id?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogRelatedBlogRelatedBlogFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MicrocmsBlogRelatedBlogRelatedBlogFilterListInput = {
+  elemMatch?: Maybe<MicrocmsBlogRelatedBlogRelatedBlogFilterInput>;
+};
+
+export type MicrocmsBlogRelatedBlogThumbnail = {
+  __typename?: 'MicrocmsBlogRelatedBlogThumbnail';
+  url?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogRelatedBlogThumbnailFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+};
+
 export type MicrocmsBlogSortInput = {
   fields?: Maybe<Array<Maybe<MicrocmsBlogFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type MicrocmsBlogThumbnail = {
+  __typename?: 'MicrocmsBlogThumbnail';
+  url?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogThumbnailFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MicrocmsCategory = Node & {
@@ -2205,6 +2340,8 @@ export type QueryMicrocmsBlogArgs = {
   body?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<MicrocmsBlogAuthorFilterInput>;
   category?: Maybe<MicrocmsBlogCategoryFilterInput>;
+  thumbnail?: Maybe<MicrocmsBlogThumbnailFilterInput>;
+  relatedBlog?: Maybe<MicrocmsBlogRelatedBlogFilterListInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
   gatsbyPath?: Maybe<StringQueryOperatorInput>;
 };
@@ -2632,6 +2769,10 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   __typename?: 'SitePageContext';
+  limit?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  pageCount?: Maybe<Scalars['Int']>;
+  currentPage?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['String']>;
   blogId?: Maybe<Scalars['String']>;
   _xparams?: Maybe<SitePageContext_Xparams>;
@@ -2650,6 +2791,10 @@ export type SitePageContext_XparamsFilterInput = {
 };
 
 export type SitePageContextFilterInput = {
+  limit?: Maybe<IntQueryOperatorInput>;
+  skip?: Maybe<IntQueryOperatorInput>;
+  pageCount?: Maybe<IntQueryOperatorInput>;
+  currentPage?: Maybe<IntQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
   _xparams?: Maybe<SitePageContext_XparamsFilterInput>;
@@ -2756,6 +2901,10 @@ export enum SitePageFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  ContextLimit = 'context___limit',
+  ContextSkip = 'context___skip',
+  ContextPageCount = 'context___pageCount',
+  ContextCurrentPage = 'context___currentPage',
   ContextId = 'context___id',
   ContextBlogId = 'context___blogId',
   ContextXparamsBlogId = 'context____xparams___blogId',
@@ -2816,6 +2965,20 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsMinify = 'pluginCreator___pluginOptions___minify',
   PluginCreatorPluginOptionsTranspileTemplateLiterals = 'pluginCreator___pluginOptions___transpileTemplateLiterals',
   PluginCreatorPluginOptionsPure = 'pluginCreator___pluginOptions___pure',
+  PluginCreatorPluginOptionsOutput = 'pluginCreator___pluginOptions___output',
+  PluginCreatorPluginOptionsCreateLinkInHead = 'pluginCreator___pluginOptions___createLinkInHead',
+  PluginCreatorPluginOptionsSrc = 'pluginCreator___pluginOptions___src',
+  PluginCreatorPluginOptionsPages = 'pluginCreator___pluginOptions___pages',
+  PluginCreatorPluginOptionsComponents = 'pluginCreator___pluginOptions___components',
+  PluginCreatorPluginOptionsLibs = 'pluginCreator___pluginOptions___libs',
+  PluginCreatorPluginOptionsTypes = 'pluginCreator___pluginOptions___types',
+  PluginCreatorPluginOptionsHooks = 'pluginCreator___pluginOptions___hooks',
+  PluginCreatorPluginOptionsAppId = 'pluginCreator___pluginOptions___appId',
+  PluginCreatorPluginOptionsApiKey = 'pluginCreator___pluginOptions___apiKey',
+  PluginCreatorPluginOptionsIndexName = 'pluginCreator___pluginOptions___indexName',
+  PluginCreatorPluginOptionsQueries = 'pluginCreator___pluginOptions___queries',
+  PluginCreatorPluginOptionsQueriesQuery = 'pluginCreator___pluginOptions___queries___query',
+  PluginCreatorPluginOptionsQueriesMatchFields = 'pluginCreator___pluginOptions___queries___matchFields',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsBase64Width = 'pluginCreator___pluginOptions___base64Width',
@@ -2831,8 +2994,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsFeedsQuery = 'pluginCreator___pluginOptions___feeds___query',
   PluginCreatorPluginOptionsFeedsOutput = 'pluginCreator___pluginOptions___feeds___output',
   PluginCreatorPluginOptionsFeedsTitle = 'pluginCreator___pluginOptions___feeds___title',
-  PluginCreatorPluginOptionsOutput = 'pluginCreator___pluginOptions___output',
-  PluginCreatorPluginOptionsCreateLinkInHead = 'pluginCreator___pluginOptions___createLinkInHead',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
   PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
@@ -2845,7 +3006,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsCrossOrigin = 'pluginCreator___pluginOptions___crossOrigin',
   PluginCreatorPluginOptionsIncludeFavicon = 'pluginCreator___pluginOptions___include_favicon',
   PluginCreatorPluginOptionsCacheDigest = 'pluginCreator___pluginOptions___cacheDigest',
-  PluginCreatorPluginOptionsApiKey = 'pluginCreator___pluginOptions___apiKey',
   PluginCreatorPluginOptionsServiceId = 'pluginCreator___pluginOptions___serviceId',
   PluginCreatorPluginOptionsApis = 'pluginCreator___pluginOptions___apis',
   PluginCreatorPluginOptionsApisEndpoint = 'pluginCreator___pluginOptions___apis___endpoint',
@@ -3059,6 +3219,21 @@ export enum SitePluginFieldsEnum {
   PluginOptionsMinify = 'pluginOptions___minify',
   PluginOptionsTranspileTemplateLiterals = 'pluginOptions___transpileTemplateLiterals',
   PluginOptionsPure = 'pluginOptions___pure',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsCreateLinkInHead = 'pluginOptions___createLinkInHead',
+  PluginOptionsSrc = 'pluginOptions___src',
+  PluginOptionsPages = 'pluginOptions___pages',
+  PluginOptionsComponents = 'pluginOptions___components',
+  PluginOptionsLibs = 'pluginOptions___libs',
+  PluginOptionsTypes = 'pluginOptions___types',
+  PluginOptionsHooks = 'pluginOptions___hooks',
+  PluginOptionsAppId = 'pluginOptions___appId',
+  PluginOptionsApiKey = 'pluginOptions___apiKey',
+  PluginOptionsIndexName = 'pluginOptions___indexName',
+  PluginOptionsQueries = 'pluginOptions___queries',
+  PluginOptionsQueriesQuery = 'pluginOptions___queries___query',
+  PluginOptionsQueriesSettingsQueryLanguages = 'pluginOptions___queries___settings___queryLanguages',
+  PluginOptionsQueriesMatchFields = 'pluginOptions___queries___matchFields',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsBase64Width = 'pluginOptions___base64Width',
@@ -3074,8 +3249,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsFeedsQuery = 'pluginOptions___feeds___query',
   PluginOptionsFeedsOutput = 'pluginOptions___feeds___output',
   PluginOptionsFeedsTitle = 'pluginOptions___feeds___title',
-  PluginOptionsOutput = 'pluginOptions___output',
-  PluginOptionsCreateLinkInHead = 'pluginOptions___createLinkInHead',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
   PluginOptionsBackgroundColor = 'pluginOptions___background_color',
@@ -3088,7 +3261,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsCrossOrigin = 'pluginOptions___crossOrigin',
   PluginOptionsIncludeFavicon = 'pluginOptions___include_favicon',
   PluginOptionsCacheDigest = 'pluginOptions___cacheDigest',
-  PluginOptionsApiKey = 'pluginOptions___apiKey',
   PluginOptionsServiceId = 'pluginOptions___serviceId',
   PluginOptionsApis = 'pluginOptions___apis',
   PluginOptionsApisEndpoint = 'pluginOptions___apis___endpoint',
@@ -3232,6 +3404,18 @@ export type SitePluginPluginOptions = {
   minify?: Maybe<Scalars['Boolean']>;
   transpileTemplateLiterals?: Maybe<Scalars['Boolean']>;
   pure?: Maybe<Scalars['Boolean']>;
+  output?: Maybe<Scalars['String']>;
+  createLinkInHead?: Maybe<Scalars['Boolean']>;
+  src?: Maybe<Scalars['String']>;
+  pages?: Maybe<Scalars['String']>;
+  components?: Maybe<Scalars['String']>;
+  libs?: Maybe<Scalars['String']>;
+  types?: Maybe<Scalars['String']>;
+  hooks?: Maybe<Scalars['String']>;
+  appId?: Maybe<Scalars['String']>;
+  apiKey?: Maybe<Scalars['String']>;
+  indexName?: Maybe<Scalars['String']>;
+  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   base64Width?: Maybe<Scalars['Int']>;
@@ -3244,8 +3428,6 @@ export type SitePluginPluginOptions = {
   pageTransitionDelay?: Maybe<Scalars['Int']>;
   query?: Maybe<Scalars['String']>;
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
-  output?: Maybe<Scalars['String']>;
-  createLinkInHead?: Maybe<Scalars['Boolean']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -3258,7 +3440,6 @@ export type SitePluginPluginOptions = {
   crossOrigin?: Maybe<Scalars['String']>;
   include_favicon?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
-  apiKey?: Maybe<Scalars['String']>;
   serviceId?: Maybe<Scalars['String']>;
   apis?: Maybe<Array<Maybe<SitePluginPluginOptionsApis>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
@@ -3312,6 +3493,18 @@ export type SitePluginPluginOptionsFilterInput = {
   minify?: Maybe<BooleanQueryOperatorInput>;
   transpileTemplateLiterals?: Maybe<BooleanQueryOperatorInput>;
   pure?: Maybe<BooleanQueryOperatorInput>;
+  output?: Maybe<StringQueryOperatorInput>;
+  createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  pages?: Maybe<StringQueryOperatorInput>;
+  components?: Maybe<StringQueryOperatorInput>;
+  libs?: Maybe<StringQueryOperatorInput>;
+  types?: Maybe<StringQueryOperatorInput>;
+  hooks?: Maybe<StringQueryOperatorInput>;
+  appId?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  indexName?: Maybe<StringQueryOperatorInput>;
+  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   base64Width?: Maybe<IntQueryOperatorInput>;
@@ -3324,8 +3517,6 @@ export type SitePluginPluginOptionsFilterInput = {
   pageTransitionDelay?: Maybe<IntQueryOperatorInput>;
   query?: Maybe<StringQueryOperatorInput>;
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
-  output?: Maybe<StringQueryOperatorInput>;
-  createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -3338,13 +3529,38 @@ export type SitePluginPluginOptionsFilterInput = {
   crossOrigin?: Maybe<StringQueryOperatorInput>;
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
-  apiKey?: Maybe<StringQueryOperatorInput>;
   serviceId?: Maybe<StringQueryOperatorInput>;
   apis?: Maybe<SitePluginPluginOptionsApisFilterListInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsQueries = {
+  __typename?: 'SitePluginPluginOptionsQueries';
+  query?: Maybe<Scalars['String']>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
+  matchFields?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterInput = {
+  query?: Maybe<StringQueryOperatorInput>;
+  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
+  matchFields?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsQueriesFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
+};
+
+export type SitePluginPluginOptionsQueriesSettings = {
+  __typename?: 'SitePluginPluginOptionsQueriesSettings';
+  queryLanguages?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
+  queryLanguages?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -3414,6 +3630,7 @@ export type Unnamed_1_Query = (
 );
 
 export type Unnamed_2_QueryVariables = Exact<{
+  id: Scalars['String'];
   categoryId: Scalars['String'];
 }>;
 
@@ -3427,14 +3644,17 @@ export type Unnamed_2_Query = (
       { __typename?: 'MicrocmsBlogEdge' }
       & { node: (
         { __typename?: 'MicrocmsBlog' }
-        & Pick<MicrocmsBlog, 'id' | 'createdAt' | 'publishedAt' | 'title' | 'blogId'>
+        & Pick<MicrocmsBlog, 'id' | 'createdAt' | 'publishedAt' | 'title' | 'description' | 'blogId'>
         & { category?: Maybe<(
           { __typename?: 'MicrocmsBlogCategory' }
           & Pick<MicrocmsBlogCategory, 'id' | 'name'>
         )> }
       ) }
     )> }
-  ) }
+  ), microcmsCategory?: Maybe<(
+    { __typename?: 'MicrocmsCategory' }
+    & Pick<MicrocmsCategory, 'name'>
+  )> }
 );
 
 export type Unnamed_3_QueryVariables = Exact<{
@@ -3446,7 +3666,7 @@ export type Unnamed_3_Query = (
   { __typename?: 'Query' }
   & { microcmsBlog?: Maybe<(
     { __typename?: 'MicrocmsBlog' }
-    & Pick<MicrocmsBlog, 'blogId' | 'title' | 'body'>
+    & Pick<MicrocmsBlog, 'blogId' | 'title' | 'body' | 'description' | 'publishedAt'>
     & { author?: Maybe<(
       { __typename?: 'MicrocmsBlogAuthor' }
       & Pick<MicrocmsBlogAuthor, 'id' | 'description' | 'name'>
@@ -3454,7 +3674,17 @@ export type Unnamed_3_Query = (
         { __typename?: 'MicrocmsBlogAuthorImage' }
         & Pick<MicrocmsBlogAuthorImage, 'url'>
       )> }
-    )> }
+    )>, thumbnail?: Maybe<(
+      { __typename?: 'MicrocmsBlogThumbnail' }
+      & Pick<MicrocmsBlogThumbnail, 'url'>
+    )>, relatedBlog?: Maybe<Array<Maybe<(
+      { __typename?: 'MicrocmsBlogRelatedBlog' }
+      & Pick<MicrocmsBlogRelatedBlog, 'id' | 'title' | 'description' | 'publishedAt'>
+      & { thumbnail?: Maybe<(
+        { __typename?: 'MicrocmsBlogRelatedBlogThumbnail' }
+        & Pick<MicrocmsBlogRelatedBlogThumbnail, 'url'>
+      )> }
+    )>>> }
   )> }
 );
 
@@ -3465,11 +3695,36 @@ export type Unnamed_4_Query = (
   { __typename?: 'Query' }
   & { allMicrocmsBlog: (
     { __typename?: 'MicrocmsBlogConnection' }
+    & Pick<MicrocmsBlogConnection, 'totalCount'>
     & { edges: Array<(
       { __typename?: 'MicrocmsBlogEdge' }
       & { node: (
         { __typename?: 'MicrocmsBlog' }
-        & Pick<MicrocmsBlog, 'id' | 'blogId' | 'title'>
+        & Pick<MicrocmsBlog, 'id' | 'blogId' | 'title' | 'description'>
+        & { category?: Maybe<(
+          { __typename?: 'MicrocmsBlogCategory' }
+          & Pick<MicrocmsBlogCategory, 'id' | 'name'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_5_QueryVariables = Exact<{
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+}>;
+
+
+export type Unnamed_5_Query = (
+  { __typename?: 'Query' }
+  & { allMicrocmsBlog: (
+    { __typename?: 'MicrocmsBlogConnection' }
+    & { edges: Array<(
+      { __typename?: 'MicrocmsBlogEdge' }
+      & { node: (
+        { __typename?: 'MicrocmsBlog' }
+        & Pick<MicrocmsBlog, 'id' | 'blogId' | 'publishedAt' | 'title' | 'description'>
         & { category?: Maybe<(
           { __typename?: 'MicrocmsBlogCategory' }
           & Pick<MicrocmsBlogCategory, 'id' | 'name'>
