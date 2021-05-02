@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  children: React.ReactNode;
   className?: string;
+  children: React.ReactNode;
 };
 
 const Component: React.FC<Props> = ({ className, children }) => <div className={className}>{children}</div>;

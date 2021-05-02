@@ -13,7 +13,7 @@ type Props = {
 const Component: React.VFC<Props> = ({ className, microcmsArticle }) => {
   return (
     <div className={className}>
-      <h1>{microcmsArticle.title}</h1>
+      <h1 className="ArticleTitle">{microcmsArticle.title}</h1>
       <time>{microcmsArticle.publishedAt}</time>
       <ContentStyle>
         <div
@@ -28,7 +28,7 @@ const Component: React.VFC<Props> = ({ className, microcmsArticle }) => {
 };
 
 export const Article = styled(Component)`
-  h1 {
+  .ArticleTitle {
     font-size: 36px;
   }
 `;

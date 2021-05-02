@@ -8,12 +8,12 @@ import 'prismjs/themes/prism-tomorrow.css';
 
 type Props = {
   children: React.ReactNode;
-  metaTitle?: string | undefined;
+  metaTitle?: string;
   metaDescription?: string;
   metaImage?: string;
 };
 
-export const MainLayout: React.FC<Props> = ({ children, metaTitle = "", metaDescription, metaImage }) => {
+export const MainLayout: React.FC<Props> = ({ children, metaTitle, metaDescription, metaImage }) => {
   return (
     <div className="main">
       <Meta metaTitle={metaTitle} metaDescription={metaDescription} metaImage={metaImage} />

@@ -16,16 +16,16 @@ const Component: React.VFC<Props> = ({ className, article }) => {
           <div className="ArticleCardWrapper">
             <Link to={`/article/${article.id}`}>
               <div className="ArticleCardRow">
-                <Figure>
-                  <Img src={article.thumbnail.url} alt="ブログイメージ" loading="lazy" />
-                </Figure>
-                <Right>
-                  <Flex>
-                    <Time>{article.publishedAt}</Time>
-                  </Flex>
-                  <H3>{article.title}</H3>
-                  <Description>{article.description}</Description>
-                </Right>
+                <figure className="ArticleCardFigure">
+                  <img className="ArticleCardImage" src={article.thumbnail.url} alt="ブログイメージ" loading="lazy" />
+                </figure>
+                <div className="ArticleCardSection">
+                  <div>
+                    <time className="ArticleCardTime">{article.publishedAt}</time>
+                  </div>
+                  <h3 className="ArticleCardTitle">{article.title}</h3>
+                  <p className="ArticleCardDescription">{article.description}</p>
+                </div>
               </div>
             </Link>
           </div>
@@ -50,58 +50,32 @@ export const ArticleCard = styled(Component)`
       display: block;
     }
   }
-`;
 
-const Flex = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
+  .ArticleCardFigure {
+    width: 220px;
+    flex: none;
+  }
+  .ArticleCardSection {
+    flex: 1 1 0;
+    margin: 0 0 0 40px;
+    margin-top: 18px;
+  }
+  .ArticleCardTitle {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .ArticleCardTime {
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .ArticleCardDescription {
+    opacity: 0.8;
+  }
 
-const Time = styled.time`
-  letter-spacing: 1px;
-  font-size: 14px;
-  margin-bottom: 8px;
-`;
-
-const H3 = styled.h3`
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 0;
-`;
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const A = styled.a`
-  display: flex;
-`;
-
-const Img = styled.img`
-  width: 100%;
-  border-radius: 3px;
-`;
-
-const Figure = styled.figure`
-  width: 220px;
-  flex: none;
-`;
-
-const Right = styled.div`
-  flex: 1 1 0;
-  margin: 0 0 0 40px;
-  margin-top: 18px;
-}
-`;
-
-const CardFooter = styled.div`
-  margin-top: 32px;
-  display: flex;
-  align-items: center;
-`;
-
-const Description = styled.p`
-  opacity: 0.8;
+  .ArticleCardImage {
+    width: 100%;
+    border-radius: 3px;
+  }
 `;
