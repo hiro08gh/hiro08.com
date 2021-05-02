@@ -10,11 +10,11 @@ marked.setOptions({
   breaks: true,
   headerIds: true,
   renderer,
-  highlight: (code, language) => {
+  highlight: (code: string, language: string) => {
     return Prism.highlight(code, Prism.languages[language]);
   }
 });
 
-export const renderMarkdown = (markdown) => {
+export const renderMarkdown = (markdown: string) => {
   return marked(markdown);
 };

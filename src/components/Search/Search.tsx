@@ -5,7 +5,7 @@ import { SearchBox } from './SearchBox';
 import { SearchResult } from './SearchResult';
 
 type Props = {
-  indices: {name: string}[];
+  indices: { name: string }[];
 };
 
 export const Search: React.FC<Props> = (props) => {

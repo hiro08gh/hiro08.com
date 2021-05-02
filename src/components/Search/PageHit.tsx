@@ -12,13 +12,10 @@ type Props = {
 
 export const PageHit: React.FC<Props> = ({ hit }) => (
   <div>
-    <Link to={`/blog/${hit.objectID}`}>
+    <Link to={`/article/${hit.objectID}`}>
       <h3>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h3>
-      <p>
-        <Highlight attribute="description" hit={hit} tagName="mark" />
-      </p>
     </Link>
     <Snippet attribute="excerpt" hit={hit} tagName="mark" />
   </div>

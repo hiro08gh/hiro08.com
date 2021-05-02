@@ -7,10 +7,10 @@ require('dotenv').config({
 const queries = [
   {
     query: `{
-      allMicrocmsBlog {
+      allMicrocmsArticle {
         edges {
           node {
-            objectID: blogId 
+            objectID: articleId 
             title
             description
           }
@@ -18,7 +18,7 @@ const queries = [
       }
     }`,
     transformer: ({ data }) =>
-      data.allMicrocmsBlog.edges.map(({ node }) => {
+      data.allMicrocmsArticle.edges.map(({ node }) => {
         return {
           objectID: node.objectID,
           title: node.title,
@@ -97,19 +97,19 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMicrocmsBlog } }) => {
-              return allMicrocmsBlog.edges.map((edge) => {
+            serialize: ({ query: { site, allMicrocmsArticle } }) => {
+              return allMicrocmsArticle.edges.map((edge) => {
                 return Object.assign({}, edge.node, {
                   description: edge.node.description,
                   date: edge.node.createdAt,
-                  url: site.siteMetadata.siteUrl + '/blog/' + edge.node.blogId,
-                  guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.blogId
+                  url: site.siteMetadata.siteUrl + '/article/' + edge.node.articleId,
+                  guid: site.siteMetadata.siteUrl + '/article/' + edge.node.articleId
                 });
               });
             },
             query: `
               {
-                allMicrocmsBlog(
+                allMicrocmsArticle(
                   sort: { fields: [createdAt], order: DESC },
                 ) {
                   edges {
@@ -117,7 +117,7 @@ module.exports = {
                       id
                       title
                       description
-                      blogId
+                      articleId
                       createdAt
                     }
                   }
@@ -131,23 +131,14 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'hiro08.dev',
-        short_name: 'hiro08.dev',
-        start_url: '/',
-        background_color: '#ffea18',
-        theme_color: '#5155c0',
-        display: 'standalone',
-        icon: 'static/profile.png'
-      }
-    },
-    {
       resolve: 'gatsby-source-microcms',
       options: {
         apiKey: process.env.API_KEY,
         serviceId: process.env.SERVICE_ID,
         apis: [
+          {
+            endpoint: 'article'
+          },
           {
             endpoint: 'blog'
           },

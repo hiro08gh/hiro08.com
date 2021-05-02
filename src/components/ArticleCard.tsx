@@ -1,42 +1,55 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { formatDate } from '../../libs/format-date';
+import { MicrocmsArticle } from '../types/graphqlTypes';
 
 type Props = {
-  blog: any;
+  className?: string;
+  article: MicrocmsArticle[];
 };
 
-export const BlogCard: React.FC<Props> = ({ blog }) => {
+const Component: React.VFC<Props> = ({ className, article }) => {
   return (
-    <Container>
-      {blog.map((blog: any) => (
-        <React.Fragment key={blog.id}>
-          <Article>
-            <Link to={`/blog/${blog.id}`}>
-              <Row>
+    <div className={className}>
+      {article.map((article: any) => (
+        <React.Fragment key={article.id}>
+          <div className="ArticleCardWrapper">
+            <Link to={`/article/${article.id}`}>
+              <div className="ArticleCardRow">
                 <Figure>
-                  <Img src={blog.thumbnail.url} alt="ブログイメージ" loading="lazy" />
+                  <Img src={article.thumbnail.url} alt="ブログイメージ" loading="lazy" />
                 </Figure>
                 <Right>
                   <Flex>
-                    <Time>{formatDate(`${blog.publishedAt}`)}</Time>
+                    <Time>{article.publishedAt}</Time>
                   </Flex>
-                  <H3>{blog.title}</H3>
-                  <Description>{blog.description}</Description>
+                  <H3>{article.title}</H3>
+                  <Description>{article.description}</Description>
                 </Right>
-              </Row>
+              </div>
             </Link>
-          </Article>
+          </div>
         </React.Fragment>
       ))}
-    </Container>
+    </div>
   );
 };
 
-const Container = styled.div`
+export const ArticleCard = styled(Component)`
   width: 100%;
   margin-top: 48px;
+  .ArticleCard {
+    margin-bottom: 24px;
+  }
+  .ArticleCardRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
 `;
 
 const Flex = styled.div`
@@ -51,22 +64,10 @@ const Time = styled.time`
   margin-bottom: 8px;
 `;
 
-const Category = styled.span`
-  font-size: 14px;
-  color: #fff;
-  background-color: #333;
-  padding: 8px 12px;
-  border-radius: var(--br-base);
-`;
-
 const H3 = styled.h3`
   font-size: 22px;
   margin-top: 0;
   margin-bottom: 0;
-`;
-
-const Article = styled.article`
-  margin-bottom: 24px;
 `;
 
 const Row = styled.div`
@@ -103,8 +104,4 @@ const CardFooter = styled.div`
 
 const Description = styled.p`
   opacity: 0.8;
-`;
-
-const LinkStyle = styled.a`
-  color: #fff;
 `;

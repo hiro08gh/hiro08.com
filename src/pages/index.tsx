@@ -1,28 +1,24 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
+import { MainLayout } from '../components/Layouts/MainLayout';
+import { InnerWidth } from '../components/InnerWidth';
+import { ArticleList } from '../components/ArticleList';
+import { Introduction } from '../components/Introduction';
+import { MicrocmsArticleConnection } from '../types/graphqlTypes';
 
-import { MainLayout } from 'components/layouts/MainLayout';
-import { Inner } from 'components/shared/Inner';
-import { Pagination } from 'components/shared/Pagination';
-import { BlogList } from 'components/shared/BlogList';
-import { MicrocmsBlogConnection } from 'types/graphqlTypes';
-import { PerPage } from 'libs/constants';
-
-type Props = {
+interface IndexPageProps extends PageProps {
   data: {
-    allMicrocmsBlog: MicrocmsBlogConnection;
+    allMicrocmsArticle: MicrocmsArticleConnection;
   };
 };
 
-const IndexPage: React.FC<Props> = ({ data }) => {
-  const pageCount = Math.ceil(data.allMicrocmsBlog.totalCount / PerPage);
-
+const IndexPage: React.VFC<IndexPageProps> = ({ data }) => {
   return (
     <MainLayout>
-      <Inner>
-        <BlogList blog={data.allMicrocmsBlog} />
-        <Pagination currentPage={1} pageCount={pageCount} path="blog" />
-      </Inner>
+      <InnerWidth>
+        <Introduction />
+        <ArticleList article={data.allMicrocmsArticle} />
+      </InnerWidth>
     </MainLayout>
   );
 };
@@ -31,13 +27,14 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allMicrocmsBlog(sort: { fields: [createdAt], order: DESC }) {
+    allMicrocmsArticle(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
           id
-          blogId
+          articleId
           title
           description
+          publishedAt(formatString: "YYYY年M月D日")
           category {
             id
             name

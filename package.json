@@ -1,7 +1,7 @@
 {
   "name": "hiro08.dev",
   "private": true,
-  "description": "My personal site.",
+  "description": "personal web.",
   "version": "1.0.0",
   "author": "hiro08",
   "scripts": {
@@ -52,6 +52,9 @@
     "@hiro08/eslint-config": "^1.0.5",
     "@types/marked": "^2.0.2",
     "@types/prismjs": "^1.16.5",
+    "@types/react-helmet": "^6.1.1",
+    "@types/react-instantsearch-dom": "^6.10.0",
+    "@types/styled-components": "^5.1.9",
     "eslint": "^7.25.0",
     "node-sass": "^5.0.0",
     "prettier": "2.2.1"

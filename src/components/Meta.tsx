@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useSiteMetadata } from 'libs/hooks/useSiteMetadata';
+import { useSiteMetadata } from '../libs/hooks/useSiteMetadata';
 
 type Props = {
   metaTitle?: string;
@@ -19,7 +19,7 @@ export const Meta: React.FC<Props> = (props) => {
         lang: 'ja'
       }}
     >
-      <title>{metaTitle ? `${metaTitle} | hiro08.dev` : `hiro08.dev`}</title>
+      <title>{metaTitle ? `${metaTitle} - hiro08.dev` : `hiro08.dev`}</title>
       <meta name="description" content={metaDescription ? metaDescription : description} />
       {/* Social meta */}
       <meta property="og:title" content={metaTitle ? metaTitle : title} />

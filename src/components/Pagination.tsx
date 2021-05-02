@@ -2,16 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
-  currentPage: number;
   pageCount: number;
-  path: string;
 };
 
-export const Pagination: React.FC<Props> = ({ currentPage, pageCount, path }) => {
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === pageCount;
-  const prevPage = currentPage - 1 === 1 ? '/1' : (currentPage - 1).toString();
-  const nextPage = (currentPage + 1).toString();
+export const Pagination: React.FC<Props> = ({ pageCount }) => {
   return (
     <nav>
       <ul>

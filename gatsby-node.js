@@ -6,11 +6,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMicrocmsBlog(sort: { fields: [publishedAt], order: DESC }, limit: 1000) {
+        allMicrocmsArticle(sort: { fields: [publishedAt], order: DESC }, limit: 1000) {
           edges {
             node {
               id
-              blogId
+              articleId
             }
           }
         }
@@ -22,14 +22,14 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  const pageTemplate = path.resolve('./src/template/blog-page.tsx');
-  const blogs = result.data.allMicrocmsBlog.edges;
+  const pageTemplate = path.resolve('./src/template/article-page.tsx');
+  const articles = result.data.allMicrocmsArticle.edges;
   const PerPage = 10;
-  const pageCount = Math.ceil(blogs.length / PerPage);
+  const pageCount = Math.ceil(articles.length / PerPage);
 
   for (let i = 0; i < pageCount; i++) {
     createPage({
-      path: i === 0 ? '/blog/page/1' : `/blog/page/${i + 1}`,
+      path: i === 0 ? '/article/page/1' : `/article/page/${i + 1}`,
       component: pageTemplate,
       context: {
         limit: PerPage,

@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 type Props = {
-  className: string;
+  className?: string;
 };
 
-const Component: React.FC<Props> = (props) => (
-  <footer className={props.className}>
-    <div className="copy-right">
+const Component: React.VFC<Props> = ({ className }) => (
+  <footer className={className}>
+    <div className="CopyRight">
       <span>© 2021 hiro08.dev. All rights reserved.</span>
     </div>
   </footer>

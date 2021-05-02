@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import { connectSearchBox } from 'react-instantsearch-dom';
 import { SearchBoxProvided } from 'react-instantsearch-core';
 
-export const Component: React.FC<SearchBoxProvided> = connectSearchBox(({ refine, currentRefinement, className }) => (
-  <form className={className}>
+export const SearchBox: React.VFC<SearchBoxProvided> = connectSearchBox(({ refine, currentRefinement }) => (
+  <form>
     <input
       className="search-input"
       type="text"
@@ -15,5 +14,3 @@ export const Component: React.FC<SearchBoxProvided> = connectSearchBox(({ refine
     />
   </form>
 ));
-
-export const SearchBox = styled(Component)``;

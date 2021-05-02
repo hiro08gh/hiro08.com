@@ -1,13 +1,13 @@
 import React from 'react';
 import { MainLayout } from '../components/Layouts/MainLayout';
-import { NotFound } from '../components/NotFound';
+import { About } from '../components/About';
 
-const NotFoundPage: React.VFC = () => {
+const AboutPage: React.VFC = () => {
   return (
     <MainLayout>
-      <NotFound />
+      <About />
     </MainLayout>
   )
 } 
 
-export default NotFoundPage;
+export default AboutPage;
