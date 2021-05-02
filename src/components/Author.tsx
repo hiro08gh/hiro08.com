@@ -8,7 +8,7 @@ type Props = {
   image: string;
 };
 
-const Component: React.VFC<Props> = ({ className, name,  description, image }) => {
+const Component: React.VFC<Props> = ({ className, name, description, image }) => {
   return (
     <div className={className}>
       <div className="AuthorRow">
@@ -35,18 +35,14 @@ export const Author = styled(Component)`
       display: block;
     }
   }
-
   .AuthorSection {
     margin-right: 24px;
   }
-
   .AuthorImage {
     width: 144px;
     height: 144px;
     border-radius: 100%;
   }
-
-
   .ProfileName {
     font-size 24px;
     margin-bottom: 0;

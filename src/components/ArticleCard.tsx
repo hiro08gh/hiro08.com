@@ -38,6 +38,7 @@ const Component: React.VFC<Props> = ({ className, article }) => {
 export const ArticleCard = styled(Component)`
   width: 100%;
   margin-top: 48px;
+
   .ArticleCard {
     margin-bottom: 24px;
   }
@@ -50,7 +51,6 @@ export const ArticleCard = styled(Component)`
       display: block;
     }
   }
-
   .ArticleCardFigure {
     width: 220px;
     flex: none;
@@ -73,7 +73,6 @@ export const ArticleCard = styled(Component)`
   .ArticleCardDescription {
     opacity: 0.8;
   }
-
   .ArticleCardImage {
     width: 100%;
     border-radius: 3px;

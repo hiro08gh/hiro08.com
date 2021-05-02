@@ -24,6 +24,7 @@ export const Component: React.VFC<Props> = ({ className, relatedArticle }) => {
 
 export const RelatedArticle = styled(Component)`
   margin-top: 64px;
+
   .RelatedArticleHead {
     width: 100%;
   }

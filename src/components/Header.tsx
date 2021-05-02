@@ -34,11 +34,9 @@ export const Header = styled(Component)`
     margin: 0 auto;
     height: 104px;
   }
-
   .HeaderLogo {
     margin: 0;
   }
-
   .HeaderLink {
     color: #33333;
     font-size: 24px;

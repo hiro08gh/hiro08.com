@@ -8,7 +8,7 @@ type Props = {
   article: MicrocmsArticleConnection;
 };
 
-const Component: React.VFC<Props> = ({ className, article}) => (
+const Component: React.VFC<Props> = ({ className, article }) => (
   <div className={className}>
     {article.edges.map(({ node }) => (
       <div key={node.id}>
