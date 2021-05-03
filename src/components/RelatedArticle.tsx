@@ -9,9 +9,6 @@ type Props = {
 };
 
 export const Component: React.VFC<Props> = ({ className, relatedArticle }) => {
-  if (relatedArticle.length === 0) {
-    return <div>関連記事がありません</div>;
-  }
   return (
     <div className={className}>
       <div className="RelatedArticleHead">

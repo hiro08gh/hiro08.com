@@ -10,7 +10,7 @@ interface IndexPageProps extends PageProps {
   data: {
     allMicrocmsArticle: MicrocmsArticleConnection;
   };
-};
+}
 
 const IndexPage: React.VFC<IndexPageProps> = ({ data }) => {
   return (

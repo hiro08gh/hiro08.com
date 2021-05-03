@@ -11,7 +11,7 @@ type Props = {
 const Component: React.VFC<Props> = ({ className, article }) => {
   return (
     <div className={className}>
-      {article.map((article: any) => (
+      {article?.map((article: MicrocmsArticle) => (
         <React.Fragment key={article.id}>
           <div className="ArticleCardWrapper">
             <Link to={`/article/${article.id}`}>

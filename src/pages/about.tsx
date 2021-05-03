@@ -7,7 +7,7 @@ const AboutPage: React.VFC = () => {
     <MainLayout>
       <About />
     </MainLayout>
-  )
-} 
+  );
+};
 
 export default AboutPage;
