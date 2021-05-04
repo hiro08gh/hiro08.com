@@ -16,15 +16,15 @@ export const Component: React.VFC<Props> = ({ className }) => {
         />
         <p className="IntroductionText">
           I am a web application (and Jamstack) developer&nbsp;
-          <a href="https://microcms.io/" className="IntroductionLink" target="_blank">
+          <a href="https://microcms.io/" className="IntroductionLink" target="_blank" rel="noopener">
             @microcms
           </a>
           &nbsp;and happy hacking every time for learning something new.&nbsp; link:&nbsp;
-          <a href="https://github.com/hiro08gh" className="IntroductionLink" target="_blank">
+          <a href="https://github.com/hiro08gh" className="IntroductionLink" target="_blank" rel="noopener">
             GitHub
           </a>
           &nbsp;
-          <a href="https://twitter.com/hiro08gh" className="IntroductionLink" target="_blank">
+          <a href="https://twitter.com/hiro08gh" className="IntroductionLink" target="_blank" rel="noopener">
             Twitter
           </a>
         </p>
