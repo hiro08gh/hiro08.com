@@ -12,7 +12,9 @@
     "clean": "gatsby clean",
     "generate": "graphql-codegen --config codegen.yml",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "algoliasearch": "^4.9.1",
@@ -55,6 +57,9 @@
     "@types/react-helmet": "^6.1.1",
     "@types/react-instantsearch-dom": "^6.10.0",
     "@types/styled-components": "^5.1.9",
+    "axe-core": "^4.2.0",
+    "cypress": "^7.2.0",
+    "cypress-axe": "^0.12.2",
     "eslint": "^7.25.0",
     "node-sass": "^5.0.0",
     "prettier": "2.2.1"
