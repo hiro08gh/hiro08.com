@@ -5,6 +5,7 @@ import { InnerWidth } from '../../components/InnerWidth';
 import { Article } from '../../components/Article';
 import { Author } from '../../components/Author';
 import { RelatedArticle } from '../../components/RelatedArticle';
+import { FullScreenLoading } from '../../components/FullScreenLoading';
 import { useFetchDraft } from '../../libs/hooks/uesFetchDraft';
 
 const ArticleDraftPage: React.VFC = () => {
@@ -14,7 +15,7 @@ const ArticleDraftPage: React.VFC = () => {
     Prism.highlightAll();
   });
 
-  if (isLoading) return <div>ローディング</div>;
+  if (isLoading) return <FullScreenLoading />;
 
   if (isError) return <div>エラー</div>;
 

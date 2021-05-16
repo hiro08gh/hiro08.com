@@ -14,9 +14,6 @@ const Component: React.VFC<Props> = ({ className }) => (
           <span>hiro08.dev</span>
         </Link>
       </div>
-      <div className="HeaderNavigation">
-        <Link to="/search">検索</Link>
-      </div>
     </div>
   </header>
 );
