@@ -102,7 +102,7 @@ export const ContentStyle = styled.div`
   }
   
   p {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 32px;
     line-height: 1.8;
   }
