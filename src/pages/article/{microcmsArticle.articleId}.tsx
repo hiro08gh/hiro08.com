@@ -12,7 +12,7 @@ interface ArticlePageProps extends PageProps {
   data: {
     microcmsArticle: MicrocmsArticle;
   };
-};
+}
 
 const ArticlePage: React.VFC<ArticlePageProps> = ({ data: { microcmsArticle } }) => {
   useEffect(() => {
@@ -22,7 +22,11 @@ const ArticlePage: React.VFC<ArticlePageProps> = ({ data: { microcmsArticle } })
     <MainLayout metaTitle={microcmsArticle.title} metaDescription={microcmsArticle.description} metaImage={microcmsArticle.thumbnail.url}>
       <InnerWidth>
         <Article microcmsArticle={microcmsArticle} />
-        <Author name={microcmsArticle.author.name} description={microcmsArticle.author.description} image={microcmsArticle.author.image.url} />
+        <Author
+          name={microcmsArticle.author.name}
+          description={microcmsArticle.author.description}
+          image={microcmsArticle.author.image.url}
+        />
         <RelatedArticle relatedArticle={microcmsArticle.relatedArticle} />
       </InnerWidth>
     </MainLayout>
