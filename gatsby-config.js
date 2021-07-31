@@ -103,9 +103,6 @@ module.exports = {
             endpoint: 'article'
           },
           {
-            endpoint: 'blog'
-          },
-          {
             endpoint: 'category'
           }
         ]
