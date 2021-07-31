@@ -4,34 +4,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
-const queries = [
-  {
-    query: `{
-      allMicrocmsArticle {
-        edges {
-          node {
-            objectID: articleId 
-            title
-            description
-          }
-        }
-      }
-    }`,
-    transformer: ({ data }) =>
-      data.allMicrocmsArticle.edges.map(({ node }) => {
-        return {
-          objectID: node.objectID,
-          title: node.title,
-          description: node.description
-        };
-      }),
-    settings: {
-      queryLanguages: ['ja']
-    },
-    matchFields: ['title', 'description']
-  }
-];
-
 module.exports = {
   siteMetadata: {
     title: `hiro08.dev`,
@@ -54,15 +26,6 @@ module.exports = {
         libs: path.join(__dirname, 'src/libs'),
         types: path.join(__dirname, 'src/types'),
         hooks: path.join(__dirname, 'src/libs/hooks')
-      }
-    },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries
       }
     },
     {
