@@ -40,6 +40,10 @@ export const TableOfContents = styled(Component)`
     display: none;
   }
 
+  .TableOfContentsHead {
+    font-weight: 700;
+  }
+
   .TableOfContentsContainer {
     position: sticky;
   }
