@@ -15,7 +15,7 @@ export const Component: React.VFC<Props> = ({ className }) => {
           alt="プロフィールイメージ"
         />
         <p className="IntroductionText">
-          I am a web application (and Jamstack) developer&nbsp;
+          I am a Software engineer&nbsp;
           <a href="https://microcms.io/" className="IntroductionLink" target="_blank" rel="noopener">
             @microcms
           </a>
