@@ -14,12 +14,11 @@ export const useFetchDraft = () => {
   });
 
   useEffect(() => {
-    const key = {
-      headers: { 'X-API-KEY': process.env.API_KEY }
-    };
     const fetchDraftData = async () => {
       try {
-        const res = await fetch(url, key);
+        const res = await fetch(url, {
+          headers: { 'X-API-KEY': process.env.API_KEY || '' }
+        });
         const data = await res.json();
 
         setData({
