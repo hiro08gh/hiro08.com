@@ -1,26 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-
-type TocType = {
-  id: string;
-  text: string;
-};
+import { TableOfContentType } from '../libs/render-toc';
 
 type Props = {
   className?: string;
   toc: [];
-  active?: boolean;
 };
 
-const Component: React.FC<Props> = ({ className, toc, active }) => {
+const Component: React.FC<Props> = ({ className, toc }) => {
   return (
     <div className={className}>
       <div className="TableOfContentsContainer">
         <p className="TableOfContentsHead">目次</p>
         <ul className="TableOfContentsLists">
-          {toc.map((data: TocType) => (
-            <li key={data.id} className={active ? 'active' : ''}>
+          {toc.map((data: TableOfContentType) => (
+            <li key={data.id}>
               <a href={`#${data.text}`} className="TableOfContentsLink">
                 {data.text}
               </a>
@@ -35,16 +29,25 @@ const Component: React.FC<Props> = ({ className, toc, active }) => {
 export const TableOfContents = styled(Component)`
   position: absolute;
   left: -170px;
+  height: 100%;
 
   @media (max-width: 768px) {
     display: none;
+  }
+
+  .TableOfContentsContainer {
+    position: sticky;
+    top: 64px;
+  }
+
+  .TableOfContentsLists {
   }
 
   .TableOfContentsHead {
     font-weight: 700;
   }
 
-  .TableOfContentsContainer {
-    position: sticky;
+  .active a {
+    font-weight: 700;
   }
 `;
