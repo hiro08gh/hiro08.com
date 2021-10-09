@@ -17,7 +17,7 @@ export const Component: React.VFC<Props> = ({ className }) => {
         <p className="IntroductionText">
           I am a Software engineer&nbsp;
           <a href="https://microcms.io/" className="IntroductionLink" target="_blank" rel="noopener">
-            @microcms
+            microcms
           </a>
           &nbsp;and happy hacking every time for learning something new.&nbsp; link:&nbsp;
           <a href="https://github.com/hiro08gh" className="IntroductionLink" target="_blank" rel="noopener">
