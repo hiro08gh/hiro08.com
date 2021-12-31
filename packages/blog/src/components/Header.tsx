@@ -21,6 +21,8 @@ const Component: React.VFC<Props> = ({ className }) => (
 export const Header = styled(Component)`
   background-color: #FFFFF;
   width: 100%;
+  border-bottom: 1px solid #E4E4E4;
+  margin-bottom: 24px;
 
   .HeaderInner {
     display: flex;
@@ -29,7 +31,7 @@ export const Header = styled(Component)`
     padding: 0 16px;
     max-width: 820px;
     margin: 0 auto;
-    height: 104px;
+    height: 64px;
   }
   .HeaderLogo {
     margin: 0;
