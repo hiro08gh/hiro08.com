@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { renderMarkdown } from '../libs/render-markdown';
+import { renderMarkdown } from './render-markdown';
 
 export interface TableOfContentType {
   id: string;
