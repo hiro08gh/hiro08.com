@@ -5,7 +5,7 @@ import queryString from 'query-string';
 export const useFetchDraft = () => {
   const location = useLocation();
   const { id, draftKey } = queryString.parse(location.search);
-  const url = process.env.API_URL + 'article/' + id + `?draftKey=${draftKey}`;
+  const baseUrl = process.env.API_URL;
 
   const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(null);
@@ -16,7 +16,7 @@ export const useFetchDraft = () => {
   useEffect(() => {
     const fetchDraftData = async () => {
       try {
-        const res = await fetch(url, {
+        const res = await fetch(`${baseUrl}/article/${id}?draftKey=${draftKey}`, {
           headers: { 'X-API-KEY': process.env.API_KEY || '' }
         });
         const data = await res.json();
@@ -25,7 +25,7 @@ export const useFetchDraft = () => {
           article: data
         });
         setLoading(false);
-      } catch (err) {
+      } catch (err: any) {
         setError(err);
       }
     };
