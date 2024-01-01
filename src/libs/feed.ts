@@ -1,8 +1,8 @@
 import RSS from 'rss';
-import { PostType } from '@/src/types/post';
+import { Post } from '@/src/types/post';
 import { meta } from '@/src/libs/meta';
 
-export const generateFeedXml = (posts: PostType[]) => {
+export const generateFeedXml = (posts: Post[]) => {
   const feed = new RSS({
     title: meta.title,
     description: meta.description,

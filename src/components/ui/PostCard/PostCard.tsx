@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { parseDate } from '@/src/libs/contents';
-import { PostType } from '@/src/types/post';
+import { Post } from '@/src/types/post';
 
 import styles from './postCard.module.scss';
 
 type Props = {
-  post: PostType;
+  post: Post;
 };
 
 export const PostCard: React.FC<Props> = ({ post }) => {

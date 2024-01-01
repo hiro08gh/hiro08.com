@@ -1,5 +1,4 @@
 import { Profile } from '@/src/components/ui/Profile';
-import styles from './layout.module.css';
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +7,7 @@ type Props = {
 
 export const Layout: React.FC<Props> = ({ children, isDescription = true }) => {
   return (
-    <div className={styles.main}>
+    <div>
       <Profile isDescription={isDescription} />
       {children}
     </div>

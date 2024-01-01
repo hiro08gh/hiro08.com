@@ -1,5 +1,5 @@
-import '@/src/styles/globals.css';
-import '@/src/styles/normalize.css';
+import '@/src/styles/globals.scss';
+import '@/src/styles/normalize.scss';
 import 'highlight.js/styles/hybrid.css';
 
 import type { AppProps } from 'next/app';

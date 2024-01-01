@@ -10,22 +10,22 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "dayjs": "^1.11.7",
-    "highlight.js": "^11.7.0",
-    "microcms-js-sdk": "^2.3.2",
-    "next": "13.1.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "dayjs": "^1.11.10",
+    "highlight.js": "^11.9.0",
+    "microcms-js-sdk": "^2.7.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rss": "^1.2.2",
-    "sass": "^1.57.1"
+    "sass": "^1.69.6"
   },
   "devDependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "@types/rss": "^0.0.30",
-    "eslint": "8.32.0",
-    "eslint-config-next": "13.1.4",
-    "typescript": "4.9.4"
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@types/rss": "^0.0.32",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "typescript": "^5.3.3"
   }
 }
