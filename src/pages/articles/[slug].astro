@@ -21,7 +21,7 @@ const parser = new MarkdownIt();
 
 <Layout title={article.title + '- hiro08.com'}>
   <main class="post mx-auto flex w-full flex-col gap-4">
-    <img src={article.thumbnail.url} alt={article.title} class="w-full" />
+    <img src={article.thumbnail.url} alt={article.title} class="w-full rounded-sm" />
     <header class="mb-5" role="presentation">
       <h1 class="text-2xl text-md mb-3">
         {article.title}
