@@ -14,7 +14,7 @@ export const presentation: Presentation = {
   title: "hiro08gh (Hiroki Ueda) 🐶",
   profile: "/profile.png",
   description:
-    "プロダクト開発と犬が好き。Jamstackアーキテクチャーやサーバレス技術に興味があります。現在はmicroCMSでプロダクトエンジニアとして開発を行っています。",
+    "Web アプリケーションエンジニア。プロダクト開発と犬が好き。Jamstack アーキテクチャーやサーバレス技術に興味があります。現在は microCMS で開発を行っています。",
   socials: [
     {
       label: "X",
@@ -30,7 +30,7 @@ export const presentation: Presentation = {
     },
     {
       label: "はてなブログ",
-      link: "https://blog.hiro08.com",
+      link: "https://code-log.hatenablog.com",
     },
     {
       label: "LAPRAS",

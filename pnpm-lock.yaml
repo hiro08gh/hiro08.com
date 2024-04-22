@@ -14,6 +14,9 @@ dependencies:
   astro:
     specifier: ^4.6.3
     version: 4.6.3(typescript@5.4.5)
+  microcms-js-sdk:
+    specifier: ^3.1.0
+    version: 3.1.0
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
@@ -1426,6 +1429,12 @@ packages:
       - typescript
     dev: false
 
+  /async-retry@1.3.3:
+    resolution: {integrity: sha512-wfr/jstw9xNi/0teMHrRW7dsz3Lt5ARhYNZ2ewpadnhaIp5mbALhOAP+EAdsC7t4Z6wqsDVv9+W6gm1Dk9mEyw==}
+    dependencies:
+      retry: 0.13.1
+    dev: false
+
   /autoprefixer@10.4.19(postcss@8.4.38):
     resolution: {integrity: sha512-BaENR2+zBZ8xXhM4pUaKUxlVdxZ0EZhjvbopwnXmxRUfqDmwSpC2lAi/QXvx7NRdPCo1WKEcEF6mV64si1z4Ew==}
     engines: {node: ^10 || ^12 || >=14}
@@ -2717,6 +2726,13 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
+  /microcms-js-sdk@3.1.0:
+    resolution: {integrity: sha512-xOqS6b6CP/p/+7D64EM+BcR4D/qMUmIucDuJUVVMz4fcHgI5zpGMTeEGQK4vMwwjm/iKvs+bifUX53RgwHez/A==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      async-retry: 1.3.3
+    dev: false
+
   /micromark-core-commonmark@2.0.0:
     resolution: {integrity: sha512-jThOz/pVmAYUtkroV3D5c1osFXAMv9e0ypGDOIZuCeAe91/sD6BoE2Sjzt30yuXtwOYUmySOhMas/PVyh02itA==}
     dependencies:
@@ -3583,6 +3599,11 @@ packages:
       retext-latin: 3.1.0
       retext-stringify: 3.1.0
       unified: 10.1.2
+    dev: false
+
+  /retry@0.13.1:
+    resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
+    engines: {node: '>= 4'}
     dev: false
 
   /reusify@1.0.4:
