@@ -26,7 +26,7 @@ export const presentation: Presentation = {
     },
     {
       label: "Zenn",
-      link: "https://github.com/hiro08gh",
+      link: "https://zenn.dev/hiro08gh",
     },
     {
       label: "はてなブログ",
@@ -34,7 +34,7 @@ export const presentation: Presentation = {
     },
     {
       label: "LAPRAS",
-      link: "https://zenn.dev/hiro08gh",
+      link: "https://lapras.com/public/hiro08gh",
     },
   ],
 };

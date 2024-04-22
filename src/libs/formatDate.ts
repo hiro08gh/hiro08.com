@@ -1,5 +1,7 @@
+import dayjs from "dayjs";
+
 export const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat("ja-JP").format(date);
+  return dayjs(date).format("YYYY/MM/DD");
 };
 
 export const currentYear = () => {

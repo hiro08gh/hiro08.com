@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import ArticleCard from '@/components/ArticleCard.astro'; 
 import { getArticles } from "@/libs/api";
-import { formatDate } from "@/libs/formatDate";
 
 const res = await getArticles({ fields: ["id", "title", "description", "thumbnail"] });
 ---
@@ -10,28 +10,12 @@ const res = await getArticles({ fields: ["id", "title", "description", "thumbnai
   <div class="flex flex-col gap-20">
     <h2 class="text-2xl text-neutral-100">Artticles</h2>
 
-    <article class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4">
       {
         res.contents.map((article: any) => (
-          <a
-            class="group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all hover:text-neutral-100"
-            href={`/articles/${article.id}`}
-          >
-          <div class="flex items-center justify-between">
-            <div>
-              <h2 class="text-lg mb-1">{article.title}</h2>
-							<p class="mb-3">{article.description}</p>
-							<p>{formatDate(article.publishedAt)}</p>
-            </div>
-          <img
-            src={article.thumbnail?.url + "?w=300&h=300&fit=fill&fm=webp"}
-            class="w-1/6 self-center"
-            alt="Your Profile"
-          />
-            </div>
-          </a>
+          <ArticleCard article={article} />
         ))
       }
-    </article>
+    </div>
   </div>
 </Layout>

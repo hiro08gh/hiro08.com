@@ -1,0 +1,33 @@
+---
+import MarkdownIt from 'markdown-it';
+import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
+import { getArticles, getArticle } from "@/libs/api";
+import { formatDate } from "@/libs/formatDate";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const res = await getArticles({ fields: ["id"] });
+  return res.contents.map((content: any) => ({
+    params: {
+      slug: content.id,
+    },
+  }));
+}
+
+const { slug } = Astro.params;
+const article = await getArticle(slug as string);
+const parser = new MarkdownIt();
+---
+
+<Layout title={article.title + '- hiro08.com'}>
+  <main class="post mx-auto flex w-full flex-col gap-4">
+    <img src={article.thumbnail.url} alt={article.title} class="w-full" />
+    <header class="mb-5" role="presentation">
+      <h1 class="text-2xl text-md mb-3">
+        {article.title}
+      </h1>
+      <time>{formatDate(article.publishedAt)}</time>
+    </header>
+    <div class="post" set:html={parser.render(RichEditorToMarkdownParser(article.body))}></div>
+  </main>
+</Layout>
