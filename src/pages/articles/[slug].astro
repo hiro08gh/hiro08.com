@@ -1,9 +1,24 @@
 ---
-import MarkdownIt from 'markdown-it';
+import { Marked } from 'marked';
+import { markedHighlight } from "marked-highlight";
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css'
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
 import { getArticles, getArticle } from "@/libs/api";
 import { formatDate } from "@/libs/formatDate";
 import Layout from "@/layouts/Layout.astro";
+import Profile from "@/components/Profile.astro";
+import ArticleCard from '@/components/ArticleCard.astro'; 
+
+const marked = new Marked(
+  markedHighlight({
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+      return hljs.highlight(code, { language }).value;
+    }
+  })
+);
 
 export async function getStaticPaths() {
   const res = await getArticles({ fields: ["id"] });
@@ -16,7 +31,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const article = await getArticle(slug as string);
-const parser = new MarkdownIt();
+
 ---
 
 <Layout title={article.title + '- hiro08.com'}>
@@ -28,6 +43,18 @@ const parser = new MarkdownIt();
       </h1>
       <time>{formatDate(article.publishedAt)}</time>
     </header>
-    <div class="post" set:html={parser.render(RichEditorToMarkdownParser(article.body))}></div>
+    <div class="post" set:html={marked.parse(RichEditorToMarkdownParser(article.body))}></div>
   </main>
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Related Articles</h3>
+      </header>
+      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+      {
+        article.relatedArticles.map((article: any) => (
+          <ArticleCard article={article} />
+        ))
+      }
+      </section>
+    </article>
 </Layout>

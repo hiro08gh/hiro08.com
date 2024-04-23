@@ -1,21 +1,30 @@
+.post p,
+h1,
+h2,
+h3,
+h4,
+h5,
+blockquote,
+img,
+table,
+hr {
+  @apply mb-6;
+}
+
 .post p {
   @apply leading-7;
 }
 
-.post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-orange-500;
+.post h1 {
+  @apply text-3xl text-neutral-100;
 }
 
 .post h2 {
-  @apply mb-6 text-3xl text-neutral-100;
+  @apply text-3xl text-neutral-100;
 }
 
 .post h3 {
-  @apply mb-4 text-xl text-neutral-100;
-}
-
-.post code {
-  @apply rounded-sm bg-neutral-800 px-1 py-[2px] text-red-500;
+  @apply text-xl text-neutral-100;
 }
 
 .post a {
@@ -27,13 +36,9 @@
 }
 
 .post blockquote {
-  @apply flex flex-row gap-2 before:block before:h-auto before:w-1 before:max-w-[1px] before:bg-red-400 before:content-[''];
+  @apply flex flex-row gap-5 before:block before:h-auto before:w-3 before:max-w-[1px] before:bg-gray-300 before:content-[''];
 }
 
-.post pre {
-  @apply p-4;
-}
-
-.post pre > code {
-  @apply bg-transparent;
+.post blockquote p {
+  @apply mt-4 mb-4;
 }
