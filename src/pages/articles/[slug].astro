@@ -1,22 +1,22 @@
 ---
-import { Marked } from 'marked';
+import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
-import hljs from 'highlight.js';
-import 'highlight.js/styles/atom-one-dark.css'
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
 import { getArticles, getArticle } from "@/libs/api";
 import { formatDate } from "@/libs/formatDate";
 import Layout from "@/layouts/Layout.astro";
-import ArticleCard from '@/components/ArticleCard.astro'; 
+import ArticleCard from "@/components/ArticleCard.astro";
 
 const marked = new Marked(
   markedHighlight({
-    langPrefix: 'hljs language-',
+    langPrefix: "hljs language-",
     highlight(code, lang) {
-      const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+      const language = hljs.getLanguage(lang) ? lang : "plaintext";
       return hljs.highlight(code, { language }).value;
-    }
-  })
+    },
+  }),
 );
 
 export async function getStaticPaths() {
@@ -30,30 +30,36 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const article = await getArticle(slug as string);
-
 ---
 
-<Layout title={article.title + '- hiro08.com'}>
+<Layout title={article.title + "- hiro08.com"}>
   <main class="post mx-auto flex w-full flex-col gap-4">
-    <img src={article.thumbnail.url} alt={article.title} class="w-full rounded-sm" />
+    <img
+      src={article.thumbnail.url}
+      alt={article.title}
+      class="w-full rounded-sm"
+    />
     <header class="mb-5" role="presentation">
       <h1 class="text-2xl text-md mb-3">
         {article.title}
       </h1>
       <time>{formatDate(article.publishedAt)}</time>
     </header>
-    <div class="post" set:html={marked.parse(RichEditorToMarkdownParser(article.body))}></div>
+    <div
+      class="post"
+      set:html={marked.parse(RichEditorToMarkdownParser(article.body))}
+    />
   </main>
-    <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
-        <h3 class="text-lg text-neutral-100">Related Articles</h3>
-      </header>
-      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+  <article class="flex flex-col gap-8">
+    <header class="flex w-full flex-row justify-between gap-2">
+      <h3 class="text-lg text-neutral-100">Related Articles</h3>
+    </header>
+    <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
       {
         article.relatedArticles.map((article: any) => (
           <ArticleCard article={article} />
         ))
       }
-      </section>
-    </article>
+    </section>
+  </article>
 </Layout>

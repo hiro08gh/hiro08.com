@@ -1,26 +1,27 @@
 ---
 import { formatDate } from "@/libs/formatDate";
 
-type Props =  {
+type Props = {
   article: any;
 };
 
 const { article } = Astro.props;
 ---
+
 <a
-	class="group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all hover:text-neutral-100 w-full"
-	href={`/articles/${article.id}`}
+  class="group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all hover:text-neutral-100 w-full"
+  href={`/articles/${article.id}`}
 >
-<div class="flex items-center justify-between">
-	<div>
-		<h2 class="text-lg mb-1">{article.title}</h2>
-		<p class="mb-3">{article.description}</p>
-		<time>{formatDate(article.publishedAt)}</time>
-	</div>
-	<img
-		src={article.thumbnail?.url + "?w=300&h=300&fit=fill&fm=webp"}
-		class="w-1/6 self-center rounded-sm max-md:hidden"
-		alt="Your Profile"
-	/>
-	</div>
+  <div class="flex items-center justify-between">
+    <div>
+      <h2 class="text-lg mb-1">{article.title}</h2>
+      <p class="mb-3">{article.description}</p>
+      <time>{formatDate(article.publishedAt)}</time>
+    </div>
+    <img
+      src={article.thumbnail?.url + "?w=300&h=300&fit=fill&fm=webp"}
+      class="w-1/6 self-center rounded-sm max-md:hidden"
+      alt="Your Profile"
+    />
+  </div>
 </a>

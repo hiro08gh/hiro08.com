@@ -1,21 +1,19 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import ArticleCard from '@/components/ArticleCard.astro'; 
+import Layout from "@/layouts/Layout.astro";
+import ArticleCard from "@/components/ArticleCard.astro";
 import { getArticles } from "@/libs/api";
 
-const res = await getArticles({ fields: ["id", "title", "description", "thumbnail"] });
+const res = await getArticles({
+  fields: ["id", "title", "description", "thumbnail"],
+});
 ---
 
-<Layout title='記事一覧 - hiro08.com'>
+<Layout title="記事一覧 - hiro08.com">
   <div class="flex flex-col gap-20">
     <h2 class="text-2xl text-neutral-100">Artticles</h2>
 
     <div class="flex flex-col gap-4">
-      {
-        res.contents.map((article: any) => (
-          <ArticleCard article={article} />
-        ))
-      }
+      {res.contents.map((article: any) => <ArticleCard article={article} />)}
     </div>
   </div>
 </Layout>

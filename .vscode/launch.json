@@ -7,5 +7,9 @@
       "request": "launch",
       "type": "node-terminal"
     }
-  ]
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

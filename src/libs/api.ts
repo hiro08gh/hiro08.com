@@ -7,7 +7,7 @@ export const getArticles = async (queries?: MicroCMSQueries) => {
 
 export const getArticle = async (
   contentId: string,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ) => {
   return await client.getListDetail({
     endpoint: "articles",

@@ -1,28 +1,32 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
-import Profile from '@/components/Profile.astro'
-import ArticleCard from '@/components/ArticleCard.astro'; 
+import Profile from "@/components/Profile.astro";
+import ArticleCard from "@/components/ArticleCard.astro";
 import { getArticles } from "@/libs/api";
 
-const res = await getArticles({ fields: ["id", "title", "description", "thumbnail"], limit: 5});
+const res = await getArticles({
+  fields: ["id", "title", "description", "thumbnail"],
+  limit: 5,
+});
 ---
 
 <Layout title="hiro08.com">
-	<Profile />
+  <Profile />
 
   <div class="flex flex-col gap-20">
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
         <h3 class="text-lg text-neutral-100">Articles</h3>
-        <Link href="/articles" label="Read All Articles" isUnderline target="_self" />
+        <Link
+          href="/articles"
+          label="Read All Articles"
+          isUnderline
+          target="_self"
+        />
       </header>
       <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-      {
-        res.contents.map((article: any) => (
-          <ArticleCard article={article} />
-        ))
-      }
+        {res.contents.map((article: any) => <ArticleCard article={article} />)}
       </section>
     </article>
   </div>
