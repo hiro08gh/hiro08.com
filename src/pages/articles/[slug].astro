@@ -20,7 +20,7 @@ const marked = new Marked(
 
 export async function getStaticPaths() {
   const res = await getArticles({ fields: ["id"] });
-  return res.contents.map((content: any) => ({
+  return res.contents.map((content) => ({
     params: {
       slug: content.id,
     },
@@ -39,10 +39,17 @@ const article = await getArticle(slug as string);
       class="w-full rounded-sm"
     />
     <header class="mb-5" role="presentation">
-      <h1 class="text-2xl text-md mb-3">
+      <h1 class="text-2xl text-md mb-6">
         {article.title}
       </h1>
-      <time>{formatDate(article.publishedAt)}</time>
+      <time class="mr-5">{formatDate(article.publishedAt || "")}</time>
+      <a href={`/categories/${article.category.id}`}>
+        <span
+          class="bg-gray-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+        >
+          {article.category.name}
+        </span>
+      </a>
     </header>
     <div
       class="post"

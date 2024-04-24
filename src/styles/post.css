@@ -5,14 +5,13 @@ h3,
 h4,
 h5,
 blockquote,
-img,
 table,
 hr {
   @apply mb-6;
 }
 
 .post p {
-  @apply leading-7;
+  @apply leading-7 text-base;
 }
 
 .post h1 {

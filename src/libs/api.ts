@@ -11,6 +11,12 @@ export type Article = {
   body: string;
   description: string;
   thumbnail: MicroCMSImage;
+  category: Category;
+} & MicroCMSContentId &
+  MicroCMSDate;
+
+export type Category = {
+  name: string;
 } & MicroCMSContentId &
   MicroCMSDate;
 
@@ -24,6 +30,21 @@ export const getArticle = async (
 ) => {
   return await client.getListDetail<Article>({
     endpoint: "articles",
+    contentId,
+    queries,
+  });
+};
+
+export const getCategories = async (queries?: MicroCMSQueries) => {
+  return await client.getList<Category>({ endpoint: "categories", queries });
+};
+
+export const getCategory = async (
+  contentId: string,
+  queries?: MicroCMSQueries,
+) => {
+  return await client.getListDetail<Category>({
+    endpoint: "categories",
     contentId,
     queries,
   });

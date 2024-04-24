@@ -4,7 +4,7 @@ import ArticleCard from "@/components/ArticleCard.astro";
 import { getArticles } from "@/libs/api";
 
 const res = await getArticles({
-  fields: ["id", "title", "description", "thumbnail"],
+  fields: ["id", "title", "description", "thumbnail", "publishedAt"],
 });
 ---
 
