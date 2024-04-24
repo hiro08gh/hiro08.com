@@ -26,7 +26,7 @@ const res = await getArticles({
         />
       </header>
       <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-        {res.contents.map((article: any) => <ArticleCard article={article} />)}
+        {res.contents.map((article) => <ArticleCard article={article} />)}
       </section>
     </article>
   </div>

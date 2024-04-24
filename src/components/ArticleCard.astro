@@ -1,8 +1,9 @@
 ---
+import type { Article } from "@/libs/api";
 import { formatDate } from "@/libs/formatDate";
 
 type Props = {
-  article: any;
+  article: Article;
 };
 
 const { article } = Astro.props;
@@ -19,7 +20,7 @@ const { article } = Astro.props;
       <time>{formatDate(article.publishedAt)}</time>
     </div>
     <img
-      src={article.thumbnail?.url + "?w=300&h=300&fit=fill&fm=webp"}
+      src={article.thumbnail.url + "?w=300&h=300&fit=fill&fm=webp"}
       class="w-1/6 self-center rounded-sm max-md:hidden"
       alt="Your Profile"
     />

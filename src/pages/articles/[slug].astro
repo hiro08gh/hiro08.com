@@ -50,16 +50,4 @@ const article = await getArticle(slug as string);
       set:html={marked.parse(RichEditorToMarkdownParser(article.body))}
     />
   </main>
-  <article class="flex flex-col gap-8">
-    <header class="flex w-full flex-row justify-between gap-2">
-      <h3 class="text-lg text-neutral-100">Related Articles</h3>
-    </header>
-    <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
-      {
-        article.relatedArticles.map((article: any) => (
-          <ArticleCard article={article} />
-        ))
-      }
-    </section>
-  </article>
 </Layout>
