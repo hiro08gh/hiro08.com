@@ -14,7 +14,7 @@ const { article } = Astro.props;
   href={`/articles/${article.id}`}
 >
   <div class="flex items-center justify-between">
-    <div>
+    <div class="mr-6">
       <h2 class="text-lg mb-1">{article.title}</h2>
       <p class="mb-3">{article.description}</p>
       <time>{formatDate(article.publishedAt || "")}</time>

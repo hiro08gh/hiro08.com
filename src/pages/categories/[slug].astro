@@ -19,7 +19,14 @@ const articles = await getArticles({ filters: `category[equals]${slug}` });
 
 <Layout title="記事一覧 - hiro08.com">
   <div class="flex flex-col gap-20">
-    <h2 class="text-2xl text-neutral-100">Category:{category.name}</h2>
+    <h2 class="text-2xl text-neutral-100">
+      {category.name}
+      {
+        articles.contents.length != 0 && (
+          <span>({articles.contents.length})</span>
+        )
+      }
+    </h2>
 
     <div class="flex flex-col gap-4">
       {articles.contents.map((article) => <ArticleCard article={article} />)}

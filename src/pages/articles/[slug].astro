@@ -33,11 +33,6 @@ const article = await getArticle(slug as string);
 
 <Layout title={article.title + "- hiro08.com"}>
   <main class="post mx-auto flex w-full flex-col gap-4">
-    <img
-      src={article.thumbnail.url}
-      alt={article.title}
-      class="w-full rounded-sm"
-    />
     <header class="mb-5" role="presentation">
       <h1 class="text-2xl text-md mb-6">
         {article.title}
@@ -51,6 +46,11 @@ const article = await getArticle(slug as string);
         </span>
       </a>
     </header>
+    <img
+      src={article.thumbnail.url}
+      alt={article.title}
+      class="w-full rounded-sm"
+    />
     <div
       class="post"
       set:html={marked.parse(RichEditorToMarkdownParser(article.body))}
