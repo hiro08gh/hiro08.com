@@ -1,5 +1,6 @@
 ---
 import { Marked } from "marked";
+import type { RendererObject } from "marked";
 import { markedHighlight } from "marked-highlight";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
@@ -17,6 +18,17 @@ const marked = new Marked(
     },
   }),
 );
+const renderer: RendererObject = {
+  heading(text, level) {
+    return `<h${level}>
+              <a name="${text}" class="no-underline" href="#${text}">
+              ${text}
+              </a>
+            </h${level}>`;
+  },
+};
+
+marked.use({ renderer });
 
 export async function getStaticPaths() {
   const res = await getArticles({ fields: ["id"] });
@@ -29,6 +41,10 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const article = await getArticle(slug as string);
+const tokens = marked.lexer(RichEditorToMarkdownParser(article.body));
+const toc = tokens.filter(
+  (token) => token.type === "heading" && token.depth < 5,
+);
 ---
 
 <Layout title={article.title + "- hiro08.com"}>
@@ -49,11 +65,29 @@ const article = await getArticle(slug as string);
     <img
       src={article.thumbnail.url}
       alt={article.title}
-      class="w-full rounded-sm"
+      class="w-full rounded-sm mb-5"
     />
-    <div
-      class="post"
-      set:html={marked.parse(RichEditorToMarkdownParser(article.body))}
-    />
+    {
+      toc.length !== 0 && (
+        <aside class="mb-5">
+          <ul>
+            <li class="list-none mb-2">目次</li>
+            {toc.map((value) => (
+              <li class="list-none mb-2">
+                {value.type === "heading" && (
+                  <a href={`#${value.text}`}>{value.text}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+    <div class="relative max-auto">
+      <div
+        class="post"
+        set:html={marked.parse(RichEditorToMarkdownParser(article.body))}
+      />
+    </div>
   </main>
 </Layout>

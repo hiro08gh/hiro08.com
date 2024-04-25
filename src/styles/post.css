@@ -19,6 +19,14 @@ pre {
   @apply text-3xl text-neutral-100;
 }
 
+.post h2 a {
+  @apply no-underline;
+}
+
+.post h3 a {
+  @apply no-underline;
+}
+
 .post h2 {
   @apply text-3xl text-neutral-100;
 }
