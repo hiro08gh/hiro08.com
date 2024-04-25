@@ -47,7 +47,11 @@ const toc = tokens.filter(
 );
 ---
 
-<Layout title={article.title + "- hiro08.com"}>
+<Layout
+  title={article.title + "- hiro08.com"}
+  description={article.description}
+  image={article.thumbnail.url}
+>
   <main class="post mx-auto flex w-full flex-col gap-4">
     <header class="mb-5" role="presentation">
       <h1 class="text-2xl text-md mb-6">

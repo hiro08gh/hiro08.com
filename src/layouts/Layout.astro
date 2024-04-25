@@ -1,13 +1,24 @@
 ---
-interface Props {
+type Props = {
   title: string;
-}
+  description: string;
+  image?: string;
+};
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
+import { SEO } from "astro-seo";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import "@/styles/base.css";
 import "@/styles/post.css";
+
+const ogp = {
+  title,
+  type: "website",
+  image,
+  url: "https://hiro08.com",
+  description,
+};
 ---
 
 <!doctype html>
@@ -19,6 +30,38 @@ import "@/styles/post.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <SEO
+      title={ogp.title}
+      description={ogp.description}
+      openGraph={{
+        basic: {
+          title: ogp.title,
+          type: ogp.type,
+          image: ogp.image || "",
+        },
+      }}
+      twitter={{
+        creator: "@hiro08gh",
+      }}
+      extend={{
+        link: [
+          { rel: "icon", href: "/favicon.svg" },
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          { name: "generator", content: Astro.generator },
+          {
+            name: "twitter:image",
+            content: ogp.image,
+          },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "twitter:title", content: ogp.title },
+          { name: "twitter:description", content: ogp.description },
+          { name: "twitter:site", content: "@hiro08gh" },
+        ],
+      }}
+    />
   </head>
   <body
     class="mx-auto flex min-h-screen max-w-[772px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
