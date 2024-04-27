@@ -8,6 +8,8 @@ import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
 import { getArticles, getArticle } from "@/libs/api";
 import { formatDate } from "@/libs/formatDate";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { presentation } from "@/data/presentation";
 
 const marked = new Marked(
   markedHighlight({
@@ -57,14 +59,30 @@ const toc = tokens.filter(
       <h1 class="text-2xl text-md mb-6">
         {article.title}
       </h1>
-      <time class="mr-5">{formatDate(article.publishedAt || "")}</time>
-      <a href={`/categories/${article.category.id}`}>
-        <span
-          class="bg-gray-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
-        >
-          {article.category.name}
-        </span>
-      </a>
+      <div class="mb-5">
+        <a href={`/categories/${article.category.id}`}>
+          <span
+            class="bg-gray-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+          >
+            {article.category.name}
+          </span>
+        </a>
+      </div>
+      <div class="flex gap-2 items-center">
+        <time>{formatDate(article.publishedAt || "")}</time>
+        <span>Author: hiro08</span>
+        {
+          presentation.profile && (
+            <Image
+              src={presentation.profile}
+              class="self-center rounded-full"
+              alt="Your Profile"
+              width="32"
+              height="32"
+            />
+          )
+        }
+      </div>
     </header>
     <img
       src={article.thumbnail.url}
