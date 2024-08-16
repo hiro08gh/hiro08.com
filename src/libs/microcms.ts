@@ -32,3 +32,10 @@ export const getPosts = async () => {
 		endpoint: "posts",
 	});
 };
+
+export const getPostDetail = async (contentId: string) => {
+	return await client.getListDetail<PostType>({
+		endpoint: "posts",
+		contentId,
+	});
+};
