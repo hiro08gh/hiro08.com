@@ -1,3 +1,3 @@
 # hiro08.com
 
-<img width="1036" alt="スクリーンショット 0006-04-22 22 11 52" src="https://github.com/hiro08gh/hiro08.com/assets/39504660/3dc08379-9699-4842-9b07-fdd8e3408674">
+<img width="987" alt="スクリーンショット 0006-08-16 20 52 41" src="https://github.com/user-attachments/assets/8886bd2a-c069-4c2f-bb8a-a77de32e32de">
