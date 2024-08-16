@@ -1,5 +1,11 @@
 import { createClient } from "microcms-js-sdk";
 
+export type PostType = {
+	title: string;
+	body: string;
+	description: string;
+};
+
 export type AboutType = {
 	name: string;
 	description: string;
@@ -18,5 +24,11 @@ const client = createClient({
 export const getAbout = async () => {
 	return await client.getObject<AboutType>({
 		endpoint: "about",
+	});
+};
+
+export const getPosts = async () => {
+	return await client.getList<PostType>({
+		endpoint: "posts",
 	});
 };

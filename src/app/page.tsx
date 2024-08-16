@@ -1,9 +1,8 @@
 import { Top } from "@/app/_components/Top";
+import { REVALIDATE_TIME } from "@/libs/constants";
 import { getAbout } from "@/libs/microcms";
 
-export const revalidate = process.env.CACHE_TIME
-	? Number(process.env.CACHE_TIME)
-	: 3600;
+export const revalidate = REVALIDATE_TIME;
 
 export default async function Page() {
 	const about = await getAbout();
