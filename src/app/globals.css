@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --primary-color: #0017c1;
+  --focus-color: #2a40e2;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -18,12 +20,18 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: '"Noto Sans JP",-apple-system,blinkmacsystemfont,"Segoe UI","Hiragino Kaku Gothic ProN","BIZ UDPGothic",meiryo,sans-serif';
+  line-height: 1.8;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px var(--focus-color) solid;
+  outline-offset: 0.2em;
 }
 
 @layer utilities {
