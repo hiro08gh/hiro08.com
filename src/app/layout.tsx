@@ -11,6 +11,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "hiro08gh",
 	description: "hiro08gh personal web",
+	openGraph: {
+		title: "hiro08gh",
+		description: "hiro08gh personal web",
+		url: "<https://hiro08.com>",
+		siteName: "hiro08gh",
+		locale: "ja_JP",
+		type: "website",
+	},
 };
 
 export default function RootLayout({
