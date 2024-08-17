@@ -1,11 +1,8 @@
 import { ClearButton } from "@/app/_components/ClearButton";
 import { PostContent } from "@/app/_components/PostContent";
-import { REVALIDATE_TIME } from "@/libs/constants";
 import { getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
 import { cookies, draftMode } from "next/headers";
-
-export const revalidate = REVALIDATE_TIME;
 
 type Props = {
 	params: { slug: string };
