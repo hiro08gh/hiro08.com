@@ -11,3 +11,12 @@ export const marked = new Marked(
 		},
 	}),
 );
+
+export const generateTOC = (body: string) => {
+	const tokens = marked.lexer(body);
+	const toc = tokens.filter(
+		(token) => token.type === "heading" && token.depth < 5,
+	);
+
+	return toc;
+};

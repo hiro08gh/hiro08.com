@@ -4,6 +4,7 @@ export type PostType = {
 	title: string;
 	body: string;
 	description: string;
+	isTOC: boolean;
 };
 
 export type AboutType = {

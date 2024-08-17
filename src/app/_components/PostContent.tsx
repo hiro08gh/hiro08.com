@@ -1,8 +1,9 @@
 import { formatDate } from "@/libs/date";
-import { marked } from "@/libs/marked";
+import { generateTOC, marked } from "@/libs/marked";
 import type { getPostDetail } from "@/libs/microcms";
 import { SymbolIcon } from "@radix-ui/react-icons";
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
+import { Toc } from "./Toc";
 
 type Props = {
 	post: Awaited<ReturnType<typeof getPostDetail>>;
@@ -10,6 +11,8 @@ type Props = {
 
 export const PostContent: React.FC<Props> = (props) => {
 	const { post } = props;
+
+	const toc = generateTOC(RichEditorToMarkdownParser(post.body));
 
 	return (
 		<div className="mb-10">
@@ -23,6 +26,7 @@ export const PostContent: React.FC<Props> = (props) => {
 					</div>
 				)}
 			</div>
+			{post.isTOC && toc.length !== 0 && <Toc toc={toc} />}
 			<div
 				className="post flex flex-col gap-8"
 				dangerouslySetInnerHTML={{
