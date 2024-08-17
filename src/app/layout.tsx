@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Header } from "./_components/Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { metadataConfig } from "@/libs/meta";
+import NextTopLoader from "nextjs-toploader";
+
 import "./globals.css";
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/github.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-	title: "hiro08gh",
-	description: "hiro08gh personal web",
-};
+export const metadata: Metadata = metadataConfig({});
 
 export default function RootLayout({
 	children,
@@ -20,9 +21,11 @@ export default function RootLayout({
 	return (
 		<html lang="ja">
 			<body className={inter.className}>
-				<main className="mx-auto flex max-w-[720px] flex-col">
+				<NextTopLoader color="#0017c1" height={1} showSpinner={false} />
+				<main className="mx-auto flex max-w-[780px] flex-col">
 					<Header />
 					{children}
+					<Footer />
 				</main>
 			</body>
 		</html>

@@ -1,24 +1,23 @@
-import { PostContent } from "@/app/_components/PostContent";
-import { REVALIDATE_TIME } from "@/libs/constants";
+import { ClearButton } from "@/components/ClearButton";
+import { PostContent } from "@/components/PostContent";
+import { metadataConfig } from "@/libs/meta";
 import { getPostDetail } from "@/libs/microcms";
-import type { Metadata, ResolvingMetadata } from "next";
-
-export const revalidate = REVALIDATE_TIME;
+import type { Metadata } from "next";
+import { cookies, draftMode } from "next/headers";
 
 type Props = {
 	params: { slug: string };
 };
 
-export async function generateMetadata(
-	{ params: { slug } }: Props,
-	parent: ResolvingMetadata,
-): Promise<Metadata> {
-	const post = await getPostDetail(slug);
+export async function generateMetadata({
+	params: { slug },
+}: Props): Promise<Metadata> {
+	const cookieStore = cookies();
+	const draftKey = cookieStore.get("draftKey")?.value;
 
-	return {
-		title: `${post.title} - hiro08gh`,
-		description: post.description,
-	};
+	const post = await getPostDetail({ contentId: slug, draftKey });
+
+	return metadataConfig({ title: post.title, description: post.description });
 }
 
 export default async function Page({
@@ -26,10 +25,18 @@ export default async function Page({
 }: {
 	params: { slug: string };
 }) {
-	const post = await getPostDetail(slug);
+	const { isEnabled } = draftMode();
+	const cookieStore = cookies();
+	const draftKey = cookieStore.get("draftKey")?.value;
+
+	const post = await getPostDetail({
+		contentId: slug,
+		draftKey,
+	});
 
 	return (
 		<div className="mx-4 max-sm:py-4">
+			{isEnabled && <ClearButton />}
 			<PostContent post={post} />
 		</div>
 	);

@@ -19,7 +19,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-color: #FFFFFF;
+  color: #333333;
   font-family: '"Noto Sans JP",-apple-system,blinkmacsystemfont,"Segoe UI","Hiragino Kaku Gothic ProN","BIZ UDPGothic",meiryo,sans-serif';
   line-height: 1.8;
 }
@@ -32,6 +33,10 @@ a {
 a:focus {
   outline: 2px var(--focus-color) solid;
   outline-offset: 0.2em;
+}
+
+img {
+  border-radius: 3px;
 }
 
 @layer utilities {
@@ -66,4 +71,24 @@ a:focus {
 
 .post blockquote p {
   @apply mt-4 mb-4;
+}
+
+.post iframe {
+  @apply w-full;
+}
+
+.hljs {
+  background-color: #f8f8f8!important;
+  font-size: 14px;
+  padding: 1.5em!important;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
