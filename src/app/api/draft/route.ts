@@ -8,8 +8,6 @@ export async function GET(request: Request, res: Response) {
 	const contentId = searchParams.get("contentId");
 	const draftKey = searchParams.get("draftKey");
 
-	cookieStore.set({ name: "draftKey", value: "test" });
-
 	if (!contentId || !draftKey) {
 		return new Response("Invalid api preview", { status: 401 });
 	}
