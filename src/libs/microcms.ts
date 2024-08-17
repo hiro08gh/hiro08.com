@@ -43,10 +43,13 @@ export const getPosts = async (limit: number, filters?: string) => {
 	});
 };
 
-export const getPostDetail = async (contentId: string) => {
+export const getPostDetail = async (contentId: string, draftKey?: string) => {
 	return await client.getListDetail<PostType>({
 		endpoint: "posts",
 		contentId,
+		queries: {
+			draftKey,
+		},
 	});
 };
 

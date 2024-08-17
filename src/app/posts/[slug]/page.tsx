@@ -1,7 +1,9 @@
+import { ClearButton } from "@/app/_components/ClearButton";
 import { PostContent } from "@/app/_components/PostContent";
 import { REVALIDATE_TIME } from "@/libs/constants";
 import { getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
+import { cookies, draftMode } from "next/headers";
 
 export const revalidate = REVALIDATE_TIME;
 
@@ -25,10 +27,15 @@ export default async function Page({
 }: {
 	params: { slug: string };
 }) {
-	const post = await getPostDetail(slug);
+	const { isEnabled } = draftMode();
+	const cookieStore = cookies();
+	const draftKey = cookieStore.get("draftKey")?.value;
+
+	const post = await getPostDetail(slug, isEnabled && draftKey ? draftKey : "");
 
 	return (
 		<div className="mx-4 max-sm:py-4">
+			{isEnabled && <ClearButton />}
 			<PostContent post={post} />
 		</div>
 	);
