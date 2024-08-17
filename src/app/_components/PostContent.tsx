@@ -1,7 +1,8 @@
 import { formatDate } from "@/libs/date";
 import { generateTOC, marked } from "@/libs/marked";
 import type { getPostDetail } from "@/libs/microcms";
-import { SymbolIcon } from "@radix-ui/react-icons";
+import { BookmarkIcon, UpdateIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
 import { Toc } from "./Toc";
 
@@ -19,12 +20,19 @@ export const PostContent: React.FC<Props> = (props) => {
 			<h2 className="text-2xl font-bold mb-4">{post.title}</h2>
 			<div className="mb-10 flex gap-3">
 				<div>{formatDate(post.createdAt)}</div>
-				{post.revisedAt && (
-					<div className="flex items-center gap-1">
-						<SymbolIcon />
-						{formatDate(post.revisedAt)}
-					</div>
-				)}
+				<div className="flex gap-2">
+					{post.tags.map((tag) => (
+						<div key={tag.id} className="flex items-center">
+							<Link
+								href={`/posts/tags/${tag.id}`}
+								className="flex items-center no-underline"
+							>
+								<BookmarkIcon />
+								{tag.name}
+							</Link>
+						</div>
+					))}
+				</div>
 			</div>
 			{post.isTOC && toc.length !== 0 && <Toc toc={toc} />}
 			<div

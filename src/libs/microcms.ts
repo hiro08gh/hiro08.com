@@ -5,6 +5,11 @@ export type PostType = {
 	body: string;
 	description: string;
 	isTOC: boolean;
+	tags: Awaited<ReturnType<typeof getTag>>[];
+};
+
+export type TagType = {
+	name: string;
 };
 
 export type AboutType = {
@@ -28,11 +33,12 @@ export const getAbout = async () => {
 	});
 };
 
-export const getPosts = async (limit: number) => {
+export const getPosts = async (limit: number, filters?: string) => {
 	return await client.getList<PostType>({
 		endpoint: "posts",
 		queries: {
 			limit,
+			filters,
 		},
 	});
 };
@@ -40,6 +46,13 @@ export const getPosts = async (limit: number) => {
 export const getPostDetail = async (contentId: string) => {
 	return await client.getListDetail<PostType>({
 		endpoint: "posts",
+		contentId,
+	});
+};
+
+export const getTag = async (contentId: string) => {
+	return await client.getListDetail<TagType>({
+		endpoint: "tags",
 		contentId,
 	});
 };
