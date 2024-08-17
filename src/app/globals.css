@@ -19,7 +19,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-color: #FFFFFF;
+  color: #333333;
   font-family: '"Noto Sans JP",-apple-system,blinkmacsystemfont,"Segoe UI","Hiragino Kaku Gothic ProN","BIZ UDPGothic",meiryo,sans-serif';
   line-height: 1.8;
 }
