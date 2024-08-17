@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { Footer } from "./_components/Footer";
 import { Header } from "./_components/Header";
 import "./globals.css";
 import "highlight.js/styles/atom-one-dark.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
 				<main className="mx-auto flex max-w-[720px] flex-col">
 					<Header />
 					{children}
+					<Footer />
 				</main>
 			</body>
 		</html>
