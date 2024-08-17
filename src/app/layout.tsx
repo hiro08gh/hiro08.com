@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "./_components/Footer";
 import { Header } from "./_components/Header";
 import "./globals.css";
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/github.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
