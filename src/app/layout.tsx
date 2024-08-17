@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 
 import { Header } from "./_components/Header";
 import "./globals.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "hiro08gh website",
-	description: "hiro08gh web site",
+	title: "hiro08gh",
+	description: "hiro08gh personal web",
 };
 
 export default function RootLayout({

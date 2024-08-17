@@ -8,7 +8,7 @@ type Props = {
 
 export const Top: React.FC<Props> = (props) => {
 	return (
-		<div className="mx-4 max-sm:py-4">
+		<div className="mx-4 mb-8 max-sm:py-4">
 			<div className="flex flex-col gap-8">
 				<h2 className="text-3xl font-bold">{props.about.name}</h2>
 				<ReactMarkdown

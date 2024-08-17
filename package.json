@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "dayjs": "^1.11.12",
+    "highlight.js": "^11.10.0",
+    "marked": "^14.0.0",
+    "marked-highlight": "^2.1.4",
     "microcms-js-sdk": "^3.1.2",
     "next": "14.2.5",
     "react": "^18",
@@ -19,6 +22,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@tailwindcss/typography": "^0.5.14",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

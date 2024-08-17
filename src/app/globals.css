@@ -39,3 +39,31 @@ a:focus {
     text-wrap: balance;
   }
 }
+
+.post h1, h2 {
+  @apply text-3xl;
+}
+
+.post h3 {
+  @apply text-xl;
+}
+
+.post h1, h2, h3, h4, h5 {
+  @apply font-bold;
+}
+
+.post ul {
+  @apply list-disc;
+}
+
+.post li {
+  @apply ml-4;
+}
+
+.post blockquote {
+  @apply flex flex-row gap-5 before:block before:h-auto before:w-3 before:max-w-[2px] before:bg-gray-300 before:content-[''];
+}
+
+.post blockquote p {
+  @apply mt-4 mb-4;
+}
