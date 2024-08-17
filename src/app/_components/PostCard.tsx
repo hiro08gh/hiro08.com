@@ -1,11 +1,9 @@
 import { formatDate } from "@/libs/date";
-import type { getPosts } from "@/libs/microcms";
+import type { PostContentsType } from "@/libs/microcms";
 import Link from "next/link";
 
-type ArrayElementType<T> = T extends (infer U)[] ? U : T;
-
 type Props = {
-	post: ArrayElementType<Awaited<ReturnType<typeof getPosts>>["contents"]>;
+	post: PostContentsType;
 };
 
 export const PostCard: React.FC<Props> = (props) => {

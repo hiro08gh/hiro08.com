@@ -1,13 +1,13 @@
 import { formatDate } from "@/libs/date";
 import { generateTOC, marked } from "@/libs/marked";
-import type { getPostDetail } from "@/libs/microcms";
-import { BookmarkIcon, UpdateIcon } from "@radix-ui/react-icons";
+import type { PostDetailType } from "@/libs/microcms";
+import { BookmarkIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
 import { Toc } from "./Toc";
 
 type Props = {
-	post: Awaited<ReturnType<typeof getPostDetail>>;
+	post: PostDetailType;
 };
 
 export const PostContent: React.FC<Props> = (props) => {
