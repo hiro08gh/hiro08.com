@@ -27,9 +27,12 @@ export const getAbout = async () => {
 	});
 };
 
-export const getPosts = async () => {
+export const getPosts = async (limit: number) => {
 	return await client.getList<PostType>({
 		endpoint: "posts",
+		queries: {
+			limit,
+		},
 	});
 };
 

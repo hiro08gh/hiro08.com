@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-	const posts = await getPosts();
+	const posts = await getPosts(10);
 
 	return (
 		<div className="mx-4 max-sm:py-4">
