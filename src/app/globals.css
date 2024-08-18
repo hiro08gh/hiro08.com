@@ -69,6 +69,10 @@ a:focus {
   @apply mt-4 mb-4;
 }
 
+.post iframe {
+  @apply w-full;
+}
+
 .hljs {
   background-color: #f8f8f8!important;
   font-size: 14px;
