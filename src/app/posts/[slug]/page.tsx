@@ -11,7 +11,10 @@ type Props = {
 export async function generateMetadata({
 	params: { slug },
 }: Props): Promise<Metadata> {
-	const post = await getPostDetail(slug);
+	const cookieStore = cookies();
+	const draftKey = cookieStore.get("draftKey")?.value;
+
+	const post = await getPostDetail({ contentId: slug, draftKey });
 
 	return {
 		title: `${post.title} - hiro08gh`,
@@ -28,7 +31,10 @@ export default async function Page({
 	const cookieStore = cookies();
 	const draftKey = cookieStore.get("draftKey")?.value;
 
-	const post = await getPostDetail(slug, isEnabled && draftKey ? draftKey : "");
+	const post = await getPostDetail({
+		contentId: slug,
+		draftKey,
+	});
 
 	return (
 		<div className="mx-4 max-sm:py-4">

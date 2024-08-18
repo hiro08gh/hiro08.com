@@ -12,7 +12,7 @@ export async function GET(request: Request, res: Response) {
 		return new Response("Invalid api preview", { status: 401 });
 	}
 
-	const post = await getPostDetail(contentId, draftKey);
+	const post = await getPostDetail({ contentId, draftKey });
 	if (!post) {
 		return new Response("Invalid slug", { status: 401 });
 	}

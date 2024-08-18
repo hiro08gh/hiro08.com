@@ -13,7 +13,6 @@ export const marked = new Marked(
 	}),
 );
 
-// Override function
 const renderer: RendererObject = {
 	link({ tokens, href }) {
 		const text = this.parser.parseInline(tokens);
