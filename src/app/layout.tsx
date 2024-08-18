@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 		siteName: "hiro08gh",
 		locale: "ja_JP",
 		type: "website",
-		images: "/icon.png",
 	},
 };
 
