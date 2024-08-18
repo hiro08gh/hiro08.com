@@ -1,5 +1,5 @@
-import { ClearButton } from "@/app/_components/ClearButton";
-import { PostContent } from "@/app/_components/PostContent";
+import { ClearButton } from "@/components/ClearButton";
+import { PostContent } from "@/components/PostContent";
 import { getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
 import { cookies, draftMode } from "next/headers";

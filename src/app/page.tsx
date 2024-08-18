@@ -1,4 +1,4 @@
-import { Top } from "@/app/_components/Top";
+import { Top } from "@/components/Top";
 import { getAbout } from "@/libs/microcms";
 
 export default async function Page() {

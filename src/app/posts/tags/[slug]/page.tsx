@@ -1,4 +1,4 @@
-import { PostCard } from "@/app/_components/PostCard";
+import { PostCard } from "@/components/PostCard";
 import { REVALIDATE_TIME } from "@/libs/constants";
 import { getPosts, getTag } from "@/libs/microcms";
 import type { Metadata } from "next";

@@ -1,4 +1,4 @@
-import { PostCard } from "@/app/_components/PostCard";
+import { PostCard } from "@/components/PostCard";
 import { getPosts } from "@/libs/microcms";
 import type { Metadata } from "next";
 
