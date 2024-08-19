@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import NextTopLoader from "nextjs-toploader";
+
 import "./globals.css";
 import "highlight.js/styles/github.css";
 
@@ -29,6 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="ja">
 			<body className={inter.className}>
+				<NextTopLoader color="#0017c1" height={1} showSpinner={false} />
 				<main className="mx-auto flex max-w-[720px] flex-col">
 					<Header />
 					{children}
