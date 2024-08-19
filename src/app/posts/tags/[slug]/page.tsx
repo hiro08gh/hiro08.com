@@ -3,8 +3,6 @@ import { REVALIDATE_TIME } from "@/libs/constants";
 import { getPosts, getTag } from "@/libs/microcms";
 import type { Metadata } from "next";
 
-export const revalidate = REVALIDATE_TIME;
-
 type Props = {
 	params: { slug: string };
 };
