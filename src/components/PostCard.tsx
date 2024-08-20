@@ -16,7 +16,7 @@ export const PostCard: React.FC<Props> = (props) => {
 					{post.title}
 				</Link>
 			</h2>
-			<div className="mb-10 flex items-center gap-3">
+			<div className="mb-4 flex items-center gap-3">
 				<div>{formatDate(post.createdAt)}</div>
 				<div className="flex gap-2">
 					{post.tags.map((tag) => (
