@@ -16,7 +16,7 @@ export const Pagination: React.FC<Props> = ({ totalCount }) => {
 		});
 
 	return (
-		<ul className="flex items-center gap-5 justify-center mt-20">
+		<ul className="flex items-center gap-5 justify-center mt-10">
 			{range(1, perPage).map((page) => (
 				<li key={page.key} className="text-center">
 					<Link href="/posts">{page.number}</Link>

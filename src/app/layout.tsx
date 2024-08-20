@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { metadataConfig } from "@/libs/meta";
 import NextTopLoader from "nextjs-toploader";
 
 import "./globals.css";
@@ -10,18 +11,7 @@ import "highlight.js/styles/github.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-	title: "hiro08gh",
-	description: "hiro08gh personal web",
-	openGraph: {
-		title: "hiro08gh",
-		description: "hiro08gh personal web",
-		url: "<https://hiro08.com>",
-		siteName: "hiro08gh",
-		locale: "ja_JP",
-		type: "website",
-	},
-};
+export const metadata: Metadata = metadataConfig({});
 
 export default function RootLayout({
 	children,

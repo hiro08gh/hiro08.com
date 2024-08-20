@@ -1,5 +1,6 @@
 import { ClearButton } from "@/components/ClearButton";
 import { PostContent } from "@/components/PostContent";
+import { metadataConfig } from "@/libs/meta";
 import { getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
 import { cookies, draftMode } from "next/headers";
@@ -16,10 +17,7 @@ export async function generateMetadata({
 
 	const post = await getPostDetail({ contentId: slug, draftKey });
 
-	return {
-		title: `${post.title} - hiro08gh`,
-		description: post.description,
-	};
+	return metadataConfig({ title: post.title, description: post.description });
 }
 
 export default async function Page({

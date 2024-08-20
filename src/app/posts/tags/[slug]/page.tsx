@@ -1,5 +1,5 @@
 import { PostCard } from "@/components/PostCard";
-import { REVALIDATE_TIME } from "@/libs/constants";
+import { metadataConfig } from "@/libs/meta";
 import { getPosts, getTag } from "@/libs/microcms";
 import type { Metadata } from "next";
 
@@ -12,9 +12,7 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
 	const tag = await getTag(slug);
 
-	return {
-		title: `${tag.name} - hiro08gh`,
-	};
+	return metadataConfig({ title: tag.name });
 }
 
 export default async function Page({

@@ -1,11 +1,10 @@
 import { Pagination } from "@/components/Pagination";
 import { PostCard } from "@/components/PostCard";
+import { metadataConfig } from "@/libs/meta";
 import { getPosts } from "@/libs/microcms";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-	title: "記事リスト - hiro08gh",
-};
+export const metadata: Metadata = metadataConfig({ title: "記事リスト" });
 
 export default async function Page() {
 	const posts = await getPosts(10);
