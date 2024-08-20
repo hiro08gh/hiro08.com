@@ -1,3 +1,4 @@
+import { Pagination } from "@/components/Pagination";
 import { PostCard } from "@/components/PostCard";
 import { getPosts } from "@/libs/microcms";
 import type { Metadata } from "next";
@@ -14,6 +15,7 @@ export default async function Page() {
 			{posts.contents.map((post) => (
 				<PostCard post={post} key={post.id} />
 			))}
+			<Pagination totalCount={10} />
 		</div>
 	);
 }
