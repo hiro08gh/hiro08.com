@@ -1,4 +1,5 @@
 import { createClient } from "microcms-js-sdk";
+import type { MicroCMSImage } from "microcms-js-sdk";
 
 /*
  * microCMS defined schema type.
@@ -11,6 +12,7 @@ export type PostType = {
 	description: string;
 	isTOC: boolean;
 	tags: TagDetailType[];
+	image?: MicroCMSImage;
 };
 
 export type TagType = {

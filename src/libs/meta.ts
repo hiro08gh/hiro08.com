@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
+
 export const metadataConfig = ({
 	title,
 	description,
-	image = "/icon.png",
+	image,
 }: {
 	title?: string;
 	description?: string;
 	image?: string;
-}) => {
+}): Metadata => {
 	return {
 		title: title ? `${title} - hiro08gh` : "hiro08gh",
 		description: description ?? "hiro08gh website",
@@ -21,10 +23,10 @@ export const metadataConfig = ({
 		twitter: {
 			title: title ? `${title} - hiro08gh` : "hiro08gh",
 			description: description ?? "hiro08gh website",
-			card: "summary",
+			card: image ? "summary_large_image" : "summary",
 			site: "https://hiro08.com",
 			creator: "hiro08",
-			images: image,
+			images: image ?? "/icon.png",
 		},
 	};
 };

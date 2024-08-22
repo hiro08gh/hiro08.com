@@ -35,6 +35,10 @@ a:focus {
   outline-offset: 0.2em;
 }
 
+img {
+  border-radius: 2px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
