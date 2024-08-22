@@ -38,7 +38,7 @@ export const PostContent: React.FC<Props> = (props) => {
 				</div>
 			</div>
 			{post.image && (
-				<div className="mb-4">
+				<div className="mb-10">
 					<img
 						src={`${post.image.url}?w=${post.image.width}&h=${post.image.height}`}
 						alt="サムネイルの画像"
