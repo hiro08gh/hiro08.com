@@ -36,7 +36,7 @@ a:focus {
 }
 
 img {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 @layer utilities {

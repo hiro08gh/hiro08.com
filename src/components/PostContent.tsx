@@ -4,6 +4,7 @@ import type { PostDetailType } from "@/libs/microcms";
 import { BookmarkIcon, UpdateIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
+import { Toc } from "./Toc";
 
 type Props = {
 	post: PostDetailType;
@@ -11,11 +12,16 @@ type Props = {
 
 export const PostContent: React.FC<Props> = (props) => {
 	const { post } = props;
+	const tokens = marked.lexer(RichEditorToMarkdownParser(post.body));
+	const headingLevel = 5;
+	const toc = tokens.filter(
+		(token) => token.type === "heading" && token.depth < headingLevel,
+	);
 
 	return (
 		<div className="mb-10">
 			<h2 className="text-2xl font-bold mb-4">{post.title}</h2>
-			<div className="mb-10 flex items-center gap-3">
+			<div className="mb-10 flex items-center flex-wrap gap-3">
 				<div>{formatDate(post.createdAt)}</div>
 				{formatDate(post.updatedAt) !== formatDate(post.createdAt) && (
 					<div className="flex items-center gap-1">
@@ -46,6 +52,12 @@ export const PostContent: React.FC<Props> = (props) => {
 						height={post.image.height}
 					/>
 				</div>
+			)}
+			{post.isTOC && (
+				<>
+					<Toc toc={toc} />
+					<hr className="mb-10" />
+				</>
 			)}
 			<div
 				className="post flex flex-col gap-8"

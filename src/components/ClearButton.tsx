@@ -5,7 +5,7 @@ export const ClearButton: React.FC = () => {
 		<Link
 			href="/api/clear-draft"
 			prefetch={false}
-			className="fixed bottom-10 right-10 py-2 px-2 no-underline border-2 rounded-full cursor-pointer text-gray-950"
+			className="fixed bottom-10 right-10 py-3 px-4 no-underline border-2 rounded-full cursor-pointer text-gray-950 bg-white"
 		>
 			下書きプレビューの解除
 		</Link>

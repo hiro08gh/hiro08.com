@@ -23,6 +23,15 @@ const renderer: RendererObject = {
 
 		return false;
 	},
+	heading({ tokens, depth }) {
+		const text = this.parser.parseInline(tokens);
+
+		return `<h${depth}>
+              <a href="#${text}" name="${text}" class="no-underline">
+              ${text}
+              </a>
+            </h${depth}>`;
+	},
 };
 
 marked.use({ renderer });
