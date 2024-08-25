@@ -39,8 +39,8 @@ dependencies:
     specifier: ^9.0.1
     version: 9.0.1(@types/react@18.3.3)(react@18.3.1)
   rich-editor-to-markdown-parser:
-    specifier: ^1.1.1
-    version: 1.1.1
+    specifier: ^1.2.0
+    version: 1.2.0
 
 devDependencies:
   '@biomejs/biome':
@@ -1598,8 +1598,8 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /rich-editor-to-markdown-parser@1.1.1:
-    resolution: {integrity: sha512-qUI7YgaSckLVGADrj2DH8oLt7lc2bXzkyEyBwZ0FFD8x3l+bDHrA1j/hTQ07LCrVLjwsw/c1uKU0lHeNyM2o/w==}
+  /rich-editor-to-markdown-parser@1.2.0:
+    resolution: {integrity: sha512-IRd9Pb/4tel9j/vh1elByywvFSFzVoEzczeXeQ2sn2D0sYivR/ejWwLVR/pRxn02C0oHp0gOG4lFxNzBRpQDWw==}
     dependencies:
       html-dom-parser: 5.0.9
     dev: false

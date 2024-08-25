@@ -7,9 +7,8 @@ export async function GET(request: Request, res: Response) {
 	const { searchParams } = new URL(request.url);
 	const contentId = searchParams.get("contentId");
 	const draftKey = searchParams.get("draftKey");
-	const secret = searchParams.get("secret");
 
-	if (!contentId || !draftKey || secret !== process.env.SECRET) {
+	if (!contentId || !draftKey) {
 		return new Response("Invalid api preview", { status: 401 });
 	}
 

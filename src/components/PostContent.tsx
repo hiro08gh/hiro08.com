@@ -3,7 +3,7 @@ import { marked } from "@/libs/marked";
 import type { PostDetailType } from "@/libs/microcms";
 import { BookmarkIcon, UpdateIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { RichEditorToMarkdownParser } from "rich-editor-to-markdown-parser";
+import { parser } from "rich-editor-to-markdown-parser";
 import { Toc } from "./Toc";
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 
 export const PostContent: React.FC<Props> = (props) => {
 	const { post } = props;
-	const tokens = marked.lexer(RichEditorToMarkdownParser(post.body));
+	const tokens = marked.lexer(parser(post.body));
 	const headingLevel = 5;
 	const toc = tokens.filter(
 		(token) => token.type === "heading" && token.depth < headingLevel,
@@ -62,7 +62,7 @@ export const PostContent: React.FC<Props> = (props) => {
 			<div
 				className="post flex flex-col gap-8"
 				dangerouslySetInnerHTML={{
-					__html: marked.parse(RichEditorToMarkdownParser(post.body)),
+					__html: marked.parse(parser(post.body)),
 				}}
 			/>
 		</div>
