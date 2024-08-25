@@ -1,6 +1,6 @@
 import type { AboutType } from "@/libs/microcms";
 import ReactMarkdown from "react-markdown";
-import parser from "rich-editor-to-markdown-parser";
+import { parser } from "rich-editor-to-markdown-parser";
 
 type Props = {
 	about: AboutType;
