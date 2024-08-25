@@ -19,6 +19,7 @@ export const metadataConfig = ({
 			siteName: "hiro08gh",
 			locale: "ja_JP",
 			type: "website",
+			images: image ?? "/icon.png",
 		},
 		twitter: {
 			title: title ? `${title} - hiro08gh` : "hiro08gh",
