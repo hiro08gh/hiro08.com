@@ -11,12 +11,12 @@ export const PostCard: React.FC<Props> = (props) => {
 	const { post } = props;
 	return (
 		<div className="mb-10" key={post.id}>
-			<h2 className="text-2xl font-bold mb-2">
+			<h2 className="text-xl font-bold mb-2">
 				<Link href={`/posts/${post.id}`} className="no-underline">
 					{post.title}
 				</Link>
 			</h2>
-			<div className="mb-4 flex items-center gap-3">
+			<div className="mb-4 flex items-center flex-wrap gap-3">
 				<div>{formatDate(post.createdAt)}</div>
 				<div className="flex gap-2">
 					{post.tags.map((tag) => (

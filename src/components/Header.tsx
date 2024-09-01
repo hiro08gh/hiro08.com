@@ -14,6 +14,7 @@ export const Header: React.FC = () => {
 						height={40}
 						className="rounded-full"
 					/>
+					<span className="visually-hidden outline-none">ホーム</span>
 				</Link>
 				<nav>
 					<Link href="/" className="text-gray-950 mr-4">
