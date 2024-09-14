@@ -1,10 +1,15 @@
 import { createClient } from "microcms-js-sdk";
 import type { MicroCMSImage } from "microcms-js-sdk";
 
-/*
- * microCMS defined schema type.
- */
 type ArrayElementType<T> = T extends (infer U)[] ? U : T;
+
+export type TagDetailType = Awaited<ReturnType<typeof getTag>>;
+
+export type PostDetailType = Awaited<ReturnType<typeof getPostDetail>>;
+
+export type PostContentsType = ArrayElementType<
+	Awaited<ReturnType<typeof getPosts>>["contents"]
+>;
 
 export type PostType = {
 	title: string;
@@ -19,24 +24,6 @@ export type TagType = {
 	name: string;
 };
 
-export type AboutType = {
-	name: string;
-	description: string;
-	links: {
-		fieldId: string;
-		name: string;
-		value: string;
-	}[];
-};
-
-export type TagDetailType = Awaited<ReturnType<typeof getTag>>;
-
-export type PostDetailType = Awaited<ReturnType<typeof getPostDetail>>;
-
-export type PostContentsType = ArrayElementType<
-	Awaited<ReturnType<typeof getPosts>>["contents"]
->;
-
 /*
  *  Initialize microCMS client.
  */
@@ -49,8 +36,9 @@ const client = createClient({
  * microCMS  domain logic.
  */
 export const getAbout = async () => {
-	return await client.getObject<AboutType>({
-		endpoint: "about",
+	return await client.getListDetail<PostType>({
+		endpoint: "posts",
+		contentId: "about",
 	});
 };
 
