@@ -20,6 +20,18 @@ export type PostType = {
 	image?: MicroCMSImage;
 };
 
+export type ScrapsType = {
+	title: string;
+	isOpen: boolean;
+	comments: CommentsType[];
+};
+
+export type CommentsType = {
+	fieldId: string;
+	body: string;
+	isOpen: boolean;
+};
+
 export type TagType = {
 	name: string;
 };
@@ -68,6 +80,22 @@ export const getPostDetail = async ({
 export const getTag = async (contentId: string) => {
 	return await client.getListDetail<TagType>({
 		endpoint: "tags",
+		contentId,
+	});
+};
+
+export const getScraps = async (limit: number) => {
+	return await client.getList<ScrapsType>({
+		endpoint: "scraps",
+		queries: {
+			limit,
+		},
+	});
+};
+
+export const getScrapsDetail = async ({ contentId }: { contentId: string }) => {
+	return await client.getListDetail<ScrapsType>({
+		endpoint: "scraps",
 		contentId,
 	});
 };
