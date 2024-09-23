@@ -13,9 +13,9 @@ type Props = {
 export const PostCard: React.FC<Props> = (props) => {
 	const { post } = props;
 	return (
-		<div className="mb-4 flex items-center">
-			<div className="mr-4">{formatDate(post.publishedAt)}</div>
-			<h2 className="text-base font-bold">
+		<div className="mb-4 flex items-center max-md:flex-none max-md:block max-md:mb-6">
+			<div className="mr-4 max-md:mb-2">{formatDate(post.publishedAt)}</div>
+			<h3 className="text-base font-bold">
 				{post.type === "Article" ? (
 					<Link href={`/posts/${post.id}`} className="no-underline">
 						{post.title}
@@ -25,7 +25,7 @@ export const PostCard: React.FC<Props> = (props) => {
 						{post.title} - Zenn
 					</Link>
 				)}
-			</h2>
+			</h3>
 		</div>
 	);
 };
