@@ -20,10 +20,17 @@ export default async function Page({
 }: {
 	params: { slug: string };
 }) {
-	const posts = await getPosts(10, `tags[contains]${slug}`);
+	const posts = await getPosts({ limit: 10, filters: `tags[contains]${slug}` });
 	const tag = await getTag(slug);
 
-	if (posts.contents.length === 0) {
+	const target = posts.contents.map((post) => ({
+		id: post.id,
+		title: post.title,
+		publishedAt: post.publishedAt || "",
+		type: "Article",
+	}));
+
+	if (target.length === 0) {
 		return (
 			<div className="mx-4 max-sm:py-4">
 				<p className="text-center">記事が存在しません</p>
@@ -35,7 +42,7 @@ export default async function Page({
 		<div className="mx-4 max-sm:py-4 flex flex-col gap-10">
 			<h2>タグ：{tag.name}</h2>
 			<div>
-				{posts.contents.map((post) => (
+				{target.map((post) => (
 					<PostCard post={post} key={post.id} />
 				))}
 			</div>

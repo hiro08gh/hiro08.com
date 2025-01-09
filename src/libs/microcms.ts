@@ -54,7 +54,10 @@ export const getAbout = async () => {
 	});
 };
 
-export const getPosts = async (limit: number, filters?: string) => {
+export const getPosts = async ({
+	limit,
+	filters,
+}: { limit: number; filters?: string }) => {
 	return await client.getList<PostType>({
 		endpoint: "posts",
 		queries: {

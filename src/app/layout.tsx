@@ -22,7 +22,7 @@ export default function RootLayout({
 		<html lang="ja">
 			<body className={inter.className}>
 				<NextTopLoader color="#0017c1" height={1} showSpinner={false} />
-				<main className="mx-auto flex max-w-[720px] flex-col">
+				<main className="mx-auto flex max-w-[780px] flex-col">
 					<Header />
 					{children}
 					<Footer />
