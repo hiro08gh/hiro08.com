@@ -28,7 +28,7 @@ export default async function Page() {
 
 	return (
 		<div className="max-sm:py-4">
-			<div className="flex flex-col gap-8 mb-8">
+			<div className="mx-4 flex flex-col gap-8 mb-8">
 				<h2 className="text-3xl font-bold">hiro08gh (Hiroki Ueda)</h2>
 				<ReactMarkdown
 					components={{
@@ -45,7 +45,8 @@ export default async function Page() {
 					{parser(about.description)}
 				</ReactMarkdown>
 			</div>
-			<div className="max-sm:py-4 flex flex-col gap-8">
+
+			<div className="mx-4 max-sm:py-4 flex flex-col gap-12">
 				<h2>記事一覧</h2>
 				<div>
 					{sortedData.map((post) => (
