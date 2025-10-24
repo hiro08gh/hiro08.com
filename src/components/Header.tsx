@@ -20,9 +20,6 @@ export const Header: React.FC = () => {
 					<Link href="/" className="text-gray-950 mr-4">
 						ホーム
 					</Link>
-					<Link href="/posts" className="text-gray-950">
-						記事リスト
-					</Link>
 				</nav>
 			</div>
 		</header>

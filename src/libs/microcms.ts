@@ -7,6 +7,8 @@ export type TagDetailType = Awaited<ReturnType<typeof getTag>>;
 
 export type PostDetailType = Awaited<ReturnType<typeof getPostDetail>>;
 
+export type AboutDetailType = Awaited<ReturnType<typeof getAbout>>;
+
 export type PostContentsType = ArrayElementType<
 	Awaited<ReturnType<typeof getPosts>>["contents"]
 >;
@@ -24,6 +26,10 @@ export type TagType = {
 	name: string;
 };
 
+export type AboutType = {
+	description: string;
+};
+
 /*
  *  Initialize microCMS client.
  */
@@ -36,9 +42,8 @@ const client = createClient({
  * microCMS  domain logic.
  */
 export const getAbout = async () => {
-	return await client.getListDetail<PostType>({
-		endpoint: "posts",
-		contentId: "about",
+	return await client.getObject<AboutType>({
+		endpoint: "about",
 	});
 };
 
