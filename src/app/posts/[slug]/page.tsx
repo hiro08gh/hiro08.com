@@ -6,13 +6,14 @@ import type { Metadata } from "next";
 import { cookies, draftMode } from "next/headers";
 
 type Props = {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({
-	params: { slug },
+	params,
 }: Props): Promise<Metadata> {
-	const cookieStore = cookies();
+	const { slug } = await params;
+	const cookieStore = await cookies();
 	const draftKey = cookieStore.get("draftKey")?.value;
 
 	const post = await getPostDetail({ contentId: slug, draftKey });
@@ -21,12 +22,13 @@ export async function generateMetadata({
 }
 
 export default async function Page({
-	params: { slug },
+	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }) {
-	const { isEnabled } = draftMode();
-	const cookieStore = cookies();
+	const { slug } = await params;
+	const { isEnabled } = await draftMode();
+	const cookieStore = await cookies();
 	const draftKey = cookieStore.get("draftKey")?.value;
 
 	const post = await getPostDetail({

@@ -4,22 +4,24 @@ import { getPosts, getTag } from "@/libs/microcms";
 import type { Metadata } from "next";
 
 type Props = {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({
-	params: { slug },
+	params,
 }: Props): Promise<Metadata> {
+	const { slug } = await params;
 	const tag = await getTag(slug);
 
 	return metadataConfig({ title: tag.name });
 }
 
 export default async function Page({
-	params: { slug },
+	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }) {
+	const { slug } = await params;
 	const posts = await getPosts({ limit: 10, filters: `tags[contains]${slug}` });
 	const tag = await getTag(slug);
 

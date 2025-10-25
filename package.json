@@ -18,7 +18,7 @@
     "marked": "^14.0.0",
     "marked-highlight": "^2.1.4",
     "microcms-js-sdk": "^3.1.2",
-    "next": "14.2.5",
+    "next": "16.0.0",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-dom": "^18",
