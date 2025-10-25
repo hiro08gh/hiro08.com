@@ -2,8 +2,8 @@ import { getPostDetail } from "@/libs/microcms";
 import { cookies, draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function GET(request: Request, res: Response) {
-	const cookieStore = cookies();
+export async function GET(request: Request) {
+	const cookieStore = await cookies();
 	const { searchParams } = new URL(request.url);
 	const contentId = searchParams.get("contentId");
 	const draftKey = searchParams.get("draftKey");
@@ -18,7 +18,7 @@ export async function GET(request: Request, res: Response) {
 		return new Response("Invalid slug", { status: 401 });
 	}
 
-	draftMode().enable();
+	(await draftMode()).enable();
 
 	cookieStore.set({
 		name: "draftKey",
