@@ -1,8 +1,9 @@
+import { AuthorProfile } from "@/components/AuthorProfile";
 import { ClearButton } from "@/components/ClearButton";
 import { PostContent } from "@/components/PostContent";
 import { StructuredData } from "@/components/StructuredData";
 import { metadataConfig } from "@/libs/meta";
-import { getPostDetail } from "@/libs/microcms";
+import { getAbout, getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
 import { cookies, draftMode } from "next/headers";
 
@@ -40,10 +41,10 @@ export default async function Page({
 	const cookieStore = await cookies();
 	const draftKey = cookieStore.get("draftKey")?.value;
 
-	const post = await getPostDetail({
-		contentId: slug,
-		draftKey,
-	});
+	const [post, about] = await Promise.all([
+		getPostDetail({ contentId: slug, draftKey }),
+		getAbout(),
+	]);
 
 	const fullUrl = `https://hiro08.com/posts/${slug}`;
 
@@ -53,6 +54,7 @@ export default async function Page({
 			<div className="mx-4 max-sm:py-4">
 				{isEnabled && <ClearButton />}
 				<PostContent post={post} />
+				<AuthorProfile about={about} />
 			</div>
 		</>
 	);

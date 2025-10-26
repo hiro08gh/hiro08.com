@@ -28,6 +28,7 @@ export type TagType = {
 
 export type AboutType = {
 	description: string;
+	image?: MicroCMSImage;
 };
 
 /*
