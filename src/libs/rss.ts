@@ -9,6 +9,7 @@ export const getRssFeed = async (url: string) => {
 			title: item.title || "",
 			publishedAt: item.pubDate ? formatDate(item.pubDate) : "",
 			type: "Zenn",
+			description: item.contentSnippet || item.content || "",
 		};
 	});
 

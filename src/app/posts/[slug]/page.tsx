@@ -1,5 +1,6 @@
 import { ClearButton } from "@/components/ClearButton";
 import { PostContent } from "@/components/PostContent";
+import { StructuredData } from "@/components/StructuredData";
 import { metadataConfig } from "@/libs/meta";
 import { getPostDetail } from "@/libs/microcms";
 import type { Metadata } from "next";
@@ -18,7 +19,15 @@ export async function generateMetadata({
 
 	const post = await getPostDetail({ contentId: slug, draftKey });
 
-	return metadataConfig({ title: post.title, description: post.description });
+	return metadataConfig({
+		title: post.title,
+		description: post.description,
+		url: `/posts/${slug}`,
+		type: "article",
+		publishedTime: post.publishedAt,
+		image: post.image?.url,
+		tags: post.tags?.map(tag => tag.name),
+	});
 }
 
 export default async function Page({
@@ -36,10 +45,15 @@ export default async function Page({
 		draftKey,
 	});
 
+	const fullUrl = `https://hiro08.com/posts/${slug}`;
+
 	return (
-		<div className="mx-4 max-sm:py-4">
-			{isEnabled && <ClearButton />}
-			<PostContent post={post} />
-		</div>
+		<>
+			<StructuredData post={post} url={fullUrl} />
+			<div className="mx-4 max-sm:py-4">
+				{isEnabled && <ClearButton />}
+				<PostContent post={post} />
+			</div>
+		</>
 	);
 }

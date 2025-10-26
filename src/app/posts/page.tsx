@@ -15,6 +15,7 @@ export default async function Page() {
 		title: post.title,
 		publishedAt: post.publishedAt || "",
 		type: "Article",
+		description: post.description,
 	}));
 
 	const sortedData = [...target, ...zenn].sort(
@@ -25,7 +26,7 @@ export default async function Page() {
 	return (
 		<div className="mx-4 max-sm:py-4 flex flex-col gap-12">
 			<h2>記事リスト</h2>
-			<div>
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
 				{sortedData.map((post) => (
 					<PostCard post={post} key={post.id} />
 				))}

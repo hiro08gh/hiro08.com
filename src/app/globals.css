@@ -41,6 +41,12 @@ img {
   .text-balance {
     text-wrap: balance;
   }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 .post h1, h2 {

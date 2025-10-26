@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Header: React.FC = () => {
 	return (
 		<header>
-			<div className="flex items-center justify-between mx-4 md:py-16 max-sm:py-4">
+			<div className="flex items-center justify-between mx-4 md:py-12 max-sm:py-4">
 				<Link href="/">
 					<Image
 						aria-hidden="true"

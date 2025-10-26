@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { metadataConfig } from "@/libs/meta";
 import NextTopLoader from "nextjs-toploader";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 		<html lang="ja">
 			<body className={inter.className}>
 				<NextTopLoader color="#0017c1" height={1} showSpinner={false} />
+				<ScrollToTop />
 				<main className="mx-auto flex max-w-[780px] flex-col">
 					<Header />
 					{children}

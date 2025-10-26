@@ -30,6 +30,7 @@ export default async function Page({
 		title: post.title,
 		publishedAt: post.publishedAt || "",
 		type: "Article",
+		description: post.description,
 	}));
 
 	if (target.length === 0) {
@@ -43,7 +44,7 @@ export default async function Page({
 	return (
 		<div className="mx-4 max-sm:py-4 flex flex-col gap-10">
 			<h2>タグ：{tag.name}</h2>
-			<div>
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
 				{target.map((post) => (
 					<PostCard post={post} key={post.id} />
 				))}
