@@ -1,3 +1,3 @@
-# hiro08.com v4
+# hiro08.com
 
-<img width="1012" alt="スクリーンショット 0006-09-12 10 50 38" src="https://github.com/user-attachments/assets/fae49cef-789e-4666-bc0b-35fa45559b0d">
+<img width="873" height="764" alt="hiro08.com のサイトイメージ" src="https://github.com/user-attachments/assets/88f69fb2-2a55-4a65-b87e-5c79e6da8c27" />
